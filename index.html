@@ -116,7 +116,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(1)</small></a></li>
+				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(4)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -237,11 +237,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/12/11/UITableView/">浅谈UITableView</a></h3>
+                    <h3><a href="/2015/11/27/优化/">UITableView性能优化</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-12-10T17:01:38.000Z" itemprop="datePublished">
-          2015-12-11
+      <time datetime="2015-11-27T11:37:01.000Z" itemprop="datePublished">
+          2015-11-27
       </time>
     
     
@@ -255,7 +255,156 @@
                 <div class="col-md-8">
                     <p>
                       
-                        UITableView
+                        
+默认: 每当一个cell进入屏幕视野,就会调用cellForRowAtIndexPath:这个方法(不管是否为创建过的cell,都会生成一个新的cell)
+
+
+优化: (把看不到的对象放到缓存池)
+当用户向上滚动的时候有一个cell要显示出来,就将消失的cell放到缓存池,然后新的cell就去缓存池里面查看是否有保存相对应标记的cell对象,有就取出来将旧的数据修改显示为新显示的数据
+
+tableView内部自带缓存池
+
+去缓存池取可
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/11/27/优化/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/11/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-11-21T13:01:38.000Z" itemprop="datePublished">
+          2015-11-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/Ivar/'>Ivar</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        #利用运行时打印UIPageControl类所有的成员变量1234567891011// class: 想要获取哪一个类的成员变量列表    //outCount :这个类所有成员变量的总和    unsigned int outCount = 0;    Ivar *ivars = class_copyIvarList([UIPageControl class], &amp;outCount);        for (int i =
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/11/21/获取OC类的私有变量/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/11/20/常见控件的事件监听/">常见控件的事件监听</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-11-20T12:37:01.000Z" itemprop="datePublished">
+          2015-11-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/事件监听/'>事件监听</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+
+UIButton
+addTarget: 所有继承UIControl的才能使用
+
+
+
+
+
+UIScrollView
+.delegate
+
+
+
+
+
+UISegmentedControl
+addTarget:
+selectedSegmentIndex:默认选取第几个标签
+
+
+
+
+
+UISlider
+addTarget:
+
+
+
+
+
+UITextField
+addTarget:
+delegate
+endEditing: 结束编辑
+resign
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/11/20/常见控件的事件监听/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/11/17/UITableView/">浅谈UITableView</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-11-16T17:01:38.000Z" itemprop="datePublished">
+          2015-11-17
+      </time>
+    
+    
+    | 
+    <a href='/tags/UITableView/'>UITableView</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
 继承UIScrollView
 
 cell属性:
@@ -268,12 +417,12 @@ UITabelView:子控件
 多组数据和单组数组的展示
 需要一个数组源(dataSource)[任何OC类型的对象(必须遵守UITableViewDataSource)]
 
-12345678910//告诉TableView一共有多少组数据-(NSInte
+12345678910//告诉TableView一共有多少组数据-(NSInteger)numberO
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/12/11/UITableView/">Read More...</a>
+                        <a href="/2015/11/17/UITableView/">Read More...</a>
                     </p>
                     
                 </div>

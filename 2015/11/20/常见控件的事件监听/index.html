@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>categories | 光立GLChen</title>
+  <title>常见控件的事件监听 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -229,81 +229,101 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <section id="intro">
+      
+<section id="intro">
     <div class="container">
         <div class="row col-md-offset-2">
             <div class="col-md-8">
-                <h1>categories</h1>
+    			<span class="post-meta">
+      <time datetime="2015-11-20T12:37:01.000Z" itemprop="datePublished">
+          2015-11-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/事件监听/'>事件监听</a>
+    
+    
+</span>
+                <h1>常见控件的事件监听</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            
+      		<ul>
+<li><ol>
+<li>UIButton<ul>
+<li>addTarget: 所有继承UIControl的才能使用</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UIScrollView<ul>
+<li>.delegate</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UISegmentedControl<ul>
+<li>addTarget:</li>
+<li>selectedSegmentIndex:默认选取第几个标签</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UISlider<ul>
+<li>addTarget:</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UITextField<ul>
+<li>addTarget:</li>
+<li>delegate</li>
+<li>endEditing: 结束编辑</li>
+<li>resignFirstResponder:</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
             <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/11/21/获取OC类的私有变量/" style="float: left;">
+        ← 利用运行时打印UIPageControl类所有的成员变量
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/11/17/UITableView/">
+        浅谈UITableView →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/11/20/常见控件的事件监听/" data-title="常见控件的事件监听" data-url="http://glchen.cn/2015/11/20/常见控件的事件监听/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
-<section id="process">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
-                <div class="timeline-centered">
-                    <div class="line"></div>
-                    <div class="present">Past</div>
-                    <div class="dot_tp"></div>
-                    <div class="born">Now</div>
-                    <div class="dot_bt"></div>
-                    
-                        <div class="timeline-entry">
-                            <div class="timeline-entry-inner">
-                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
-                                    <span class="number">1</span>
-                                </div>
-                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
-                                    <p>2014/06/12-Start</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="timeline-entry">
-                            <div class="timeline-entry-inner">
-                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
-                                    <span class="number">2</span>
-                                </div>
-                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
-                                    <p>2014/11/29-XXX</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="timeline-entry">
-                            <div class="timeline-entry-inner">
-                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
-                                    <span class="number">3</span>
-                                </div>
-                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
-                                    <p>2015/02/18-DDD</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="timeline-entry">
-                            <div class="timeline-entry-inner">
-                                <div class="timeline-icon wow fadeInUp" data-wow-delay="0.2s">
-                                    <span class="number">4</span>
-                                </div>
-                                <div class="timeline-label wow fadeInUp" data-wow-delay="0.2s">
-                                    <p>More</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                </div>
-                <!-- timeline-centered -->
-            </div>
-        </div>
-    </div>
-</section>
+
 
       
 <!-- ============================ Footer =========================== -->
