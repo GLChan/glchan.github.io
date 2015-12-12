@@ -307,10 +307,10 @@
     
 </nav>
 
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/11/20/常见控件的事件监听/" data-title="常见控件的事件监听" data-url="http://glchen.cn/2015/11/20/常见控件的事件监听/"></div>
+        <div class="duoshuo"><% if (theme.duoshuo){ %>
+<div class="ds-thread" data-thread-key="<%= page.path %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"glchen"};
+var duoshuoQuery = {short_name:"<%= theme.duoshuo %>"};
 (function() {
 	var ds = document.createElement('script');
 	ds.type = 'text/javascript';ds.async = true;
@@ -320,7 +320,7 @@ var duoshuoQuery = {short_name:"glchen"};
 	 || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
 </script>
-</div>
+<% } %></div>
     </div>
 </section>
 
