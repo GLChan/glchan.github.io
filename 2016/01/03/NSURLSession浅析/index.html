@@ -253,8 +253,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>##一. NSURLSession</p>
-<blockquote>
+      		<h2 id="u4E00-_NSURLSession"><a href="#u4E00-_NSURLSession" class="headerlink" title="一. NSURLSession"></a>一. NSURLSession</h2><blockquote>
 <p>-(NSURLSessionDataTask <em>)dataTaskWithRequest:(NSURLRequest </em>)request completionHandler:(void (^)(NSData <em>data, NSURLResponse </em>response, NSError *error))completionHandler`</p>
 </blockquote>
 <ul>
@@ -304,8 +303,7 @@
 <ul>
 <li><strong>暂停</strong>任务</li>
 </ul>
-<p>###Creating a Session 创建一个会话</p>
-<blockquote>
+<h3 id="Creating_a_Session__u521B_u5EFA_u4E00_u4E2A_u4F1A_u8BDD"><a href="#Creating_a_Session__u521B_u5EFA_u4E00_u4E2A_u4F1A_u8BDD" class="headerlink" title="Creating a Session 创建一个会话"></a>Creating a Session 创建一个会话</h3><blockquote>
 <p>+(NSURLSession <em>)sessionWithConfiguration:(NSURLSessionConfiguration </em>)configuration delegate:(id<nsurlsessiondelegate>)delegate delegateQueue:(NSOperationQueue *)queue</nsurlsessiondelegate></p>
 </blockquote>
 <ul>
@@ -314,8 +312,7 @@
 </ul>
 </li>
 </ul>
-<p>##二. NSURLSessionTask</p>
-<ul>
+<h2 id="u4E8C-_NSURLSessionTask"><a href="#u4E8C-_NSURLSessionTask" class="headerlink" title="二. NSURLSessionTask"></a>二. NSURLSessionTask</h2><ul>
 <li>NSURLSessionTask<ul>
 <li>NSURLSessionDataTask<ul>
 <li>NSURLSessionUploadTask </li>
@@ -325,8 +322,7 @@
 </ul>
 </li>
 </ul>
-<p>####Adding Download Tasks to a Session 在会话中添加一个下载任务</p>
-<blockquote>
+<h4 id="Adding_Download_Tasks_to_a_Session__u5728_u4F1A_u8BDD_u4E2D_u6DFB_u52A0_u4E00_u4E2A_u4E0B_u8F7D_u4EFB_u52A1"><a href="#Adding_Download_Tasks_to_a_Session__u5728_u4F1A_u8BDD_u4E2D_u6DFB_u52A0_u4E00_u4E2A_u4E0B_u8F7D_u4EFB_u52A1" class="headerlink" title="Adding Download Tasks to a Session 在会话中添加一个下载任务"></a>Adding Download Tasks to a Session 在会话中添加一个下载任务</h4><blockquote>
 <p>-(NSURLSessionDownloadTask <em>)downloadTaskWithURL:(NSURL </em>)url completionHandler:(void (^)(NSURL <em>location, NSURLResponse </em>response, NSError *error))completionHandler</p>
 </blockquote>
 <ul>
@@ -341,22 +337,19 @@
 <ul>
 <li>创建一个下载任务，<strong>恢复</strong>先前取消或失败的下载。</li>
 </ul>
-<p>####Canceling a Download 取消下载</p>
-<blockquote>
+<h4 id="Canceling_a_Download__u53D6_u6D88_u4E0B_u8F7D"><a href="#Canceling_a_Download__u53D6_u6D88_u4E0B_u8F7D" class="headerlink" title="Canceling a Download 取消下载"></a>Canceling a Download 取消下载</h4><blockquote>
 <p>-(void)cancelByProducingResumeData:(void (^)(NSData *resumeData))completionHandler</p>
 </blockquote>
 <ul>
 <li>取消下载并调用恢复数据<strong>以备后用的一个回调</strong>。</li>
 </ul>
-<p>##三. Delegate Methods</p>
-<ol>
+<h2 id="u4E09-_Delegate_Methods"><a href="#u4E09-_Delegate_Methods" class="headerlink" title="三. Delegate Methods"></a>三. Delegate Methods</h2><ol>
 <li>NSURLSessionDelegate</li>
 <li>NSURLSessionTaskDelegate</li>
 <li>NSURLSessionDataDelegate</li>
 <li>NSURLSessionDownloadDelegate</li>
 </ol>
-<p>###3. NSURLSessionDataDelegate</p>
-<blockquote>
+<h3 id="3-_NSURLSessionDataDelegate"><a href="#3-_NSURLSessionDataDelegate" class="headerlink" title="3. NSURLSessionDataDelegate"></a>3. NSURLSessionDataDelegate</h3><blockquote>
 <p>-(void)URLSession:(NSURLSession <em>)session dataTask:(NSURLSessionDataTask </em>)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler</p>
 </blockquote>
 <ul>
@@ -374,8 +367,7 @@
 <ul>
 <li>告诉代理 任务完成数据传输。这个方法当<strong>请求完成的时候</strong>调用</li>
 </ul>
-<p>###4. NSURLSessionDownloadDelegate</p>
-<blockquote>
+<h3 id="4-_NSURLSessionDownloadDelegate"><a href="#4-_NSURLSessionDownloadDelegate" class="headerlink" title="4. NSURLSessionDownloadDelegate"></a>4. NSURLSessionDownloadDelegate</h3><blockquote>
 <p>-(void)URLSession:(NSURLSession <em>)session downloadTask:(NSURLSessionDownloadTask </em>)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite</p>
 </blockquote>
 <ul>
