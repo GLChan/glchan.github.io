@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>Tag: 事件监听 | 光立GLChen</title>
+  <title>const,static,extern | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,37 +235,92 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/11/20/常见控件的事件监听/">常见控件的事件监听</a></h4>
-                            
-                            <p><time datetime="2015-11-20T12:37:01.000Z"><a href="/2015/11/20/常见控件的事件监听/">2015-11-20</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-12-29T17:01:38.000Z" itemprop="datePublished">
+          2015-12-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/修饰符/'>修饰符</a>
+    
+    
+</span>
+                <h1>const,static,extern</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-_const"><a href="#1-_const" class="headerlink" title="1. const"></a>1. const</h2><h4 id="u4F5C_u7528"><a href="#u4F5C_u7528" class="headerlink" title="作用"></a>作用</h4><ol>
+<li>用来修饰右边变量(基本变量,指针变量)</li>
+<li>只要被const修饰的变量,只读</li>
+</ol>
+<p>修饰基本变量:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">修饰指针变量:</span><br></pre></td></tr></table></figure>
+<p>int b = 2;<br>int const <em>p ;<br>int </em> const p ;<br>```</p>
+<h4 id="const_-__u5F00_u53D1_u4E2D_u7684_u4F7F_u7528_u573A_u666F"><a href="#const_-__u5F00_u53D1_u4E2D_u7684_u4F7F_u7528_u573A_u666F" class="headerlink" title="const - 开发中的使用场景"></a>const - 开发中的使用场景</h4><ol>
+<li>替换宏, 把一些常见的变量编程只读变量</li>
+<li>方法参数, 传入一个地址, 不允许在方法内部修改外接的值</li>
+</ol>
+<h2 id="2-_statiche_2C_extern_u4F7F_u7528"><a href="#2-_statiche_2C_extern_u4F7F_u7528" class="headerlink" title="2. statiche, extern使用"></a>2. statiche, extern使用</h2><h3 id="static_u4F5C_u7528_3A"><a href="#static_u4F5C_u7528_3A" class="headerlink" title="static作用:"></a>static作用:</h3><ol>
+<li>描述局部变量, 局部比那两被static修饰, <strong>生命周期会延长(整个app运行过程中都在), 作用域不变.</strong></li>
+<li><strong>局部</strong>变量被static修饰, 只会分配<mark>一次</mark>内存, 程序已启动就会分配</li>
+<li>修饰全局变量, 全局变量被static修饰, 生命周期不变, 作用域不变, 只能在当前文件下使用</li>
+</ol>
+<h3 id="extern_u4F5C_u7528_3A"><a href="#extern_u4F5C_u7528_3A" class="headerlink" title="extern作用:"></a>extern作用:</h3><ol>
+<li><strong>声明一个外部变量, 不能定义变量</strong></li>
+</ol>
+<h2 id="u5176_u4ED6_u7528_u6CD5"><a href="#u5176_u4ED6_u7528_u6CD5" class="headerlink" title="其他用法"></a>其他用法</h2><ol>
+<li>static和const联合使用<ul>
+<li>static和const作用: 声明一个只读的静态变量</li>
+<li>开发使用场景: 在<code>一个文件中</code>经常使用的字符串常量,可以使用static与const组合</li>
+</ul>
+</li>
+<li>extern和const联合使用<ul>
+<li>定义全局只读变量</li>
+<li>**开发规范: 全局变量不恩能够在自己的文件下定义, 有一个专门的文件, 去管理所有的全局变量 (GlobeConst.m)</li>
+<li>UIKIT_EXTERN</li>
+</ul>
+</li>
+</ol>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/01/02/如何获得文件的MIMEType/" style="float: left;">
+        ← 如何获得文件的MIMEType
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/11/27/优化/">
+        UITableView性能优化 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/12/30/const,static,extern/" data-title="const,static,extern" data-url="http://glchen.cn/2015/12/30/const,static,extern/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
