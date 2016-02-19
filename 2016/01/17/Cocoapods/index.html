@@ -261,7 +261,11 @@
 </ul>
 </li>
 <li><code>open podfile</code>打开这个文件,用来写一些添加框架的命令</li>
-<li><code>pod search AFN</code></li>
+<li>例如: <code>pod search AFN</code> 这个命令用来搜索AFN框架添加的命令<ul>
+<li>当搜索到相对应的命令后, 如 : <code>pod &#39;AFNetworking&#39;, &#39;~&gt; 3.0.4&#39;</code> </li>
+<li>将命令拷贝到podfile文件中,接着执行第4步</li>
+</ul>
+</li>
 <li><code>pod install</code><ul>
 <li>判断有没有podfile.lock文件,如果有,直接加载podfile.lock,如果没有就加载podfile</li>
 <li><code>--no-repo-update</code>跳过<code>pod repo update</code>,比较快速的导入第三方框架</li>
