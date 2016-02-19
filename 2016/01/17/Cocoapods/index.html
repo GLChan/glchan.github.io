@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>浅谈UITableView | 光立GLChen</title>
+  <title>Cocoapods使用 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -240,117 +240,59 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2015-11-16T17:01:38.000Z" itemprop="datePublished">
-          2015-11-17
+      <time datetime="2016-01-16T17:01:38.000Z" itemprop="datePublished">
+          2016-01-17
       </time>
     
     
     | 
-    <a href='/tags/UITableView/'>UITableView</a>
+    <a href='/tags/Cocoapods/'>Cocoapods</a>
     
     
 </span>
-                <h1>浅谈UITableView</h1>
+                <h1>Cocoapods使用</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<ul>
-<li>继承UIScrollView</li>
+      		<p>CocoaPods作为一个框架管理还是比较简单易用的,下面是一些简单的命令:</p>
+<ol>
+<li>在工程目录下,创建podfile<ul>
+<li><code>touch podfile</code></li>
 </ul>
-<h3 id="cell_u5C5E_u6027_3A"><a href="#cell_u5C5E_u6027_3A" class="headerlink" title="cell属性:"></a>cell属性:</h3><ul>
-<li>imageView:</li>
-<li>textLabel:</li>
-<li>detailTextLabel:</li>
-<li>contentView:父控件</li>
-<li>UITabelView:子控件</li>
-</ul>
-<h2 id="u591A_u7EC4_u6570_u636E_u548C_u5355_u7EC4_u6570_u7EC4_u7684_u5C55_u793A"><a href="#u591A_u7EC4_u6570_u636E_u548C_u5355_u7EC4_u6570_u7EC4_u7684_u5C55_u793A" class="headerlink" title="多组数据和单组数组的展示"></a>多组数据和单组数组的展示</h2><ul>
-<li>需要一个数组源(dataSource)[任何OC类型的对象(必须遵守UITableViewDataSource)]</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//告诉TableView一共有多少组数据</span></span><br><span class="line">-(<span class="built_in">NSInteger</span>)numberOfSectionsInTableView:(<span class="built_in">UITableView</span> *)tableView;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//告诉tableView每一组有多少行</span></span><br><span class="line">- (<span class="built_in">NSInteger</span>)tableView:(<span class="built_in">UITableView</span> *)tableView numberOfRowsInSection:(<span class="built_in">NSInteger</span>)section;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//告诉tableView每一行的内容(tableView的每一行都是UITableVIewCell)</span></span><br><span class="line">-(<span class="built_in">UITableViewCell</span> *)tableView:(<span class="built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath</span><br></pre></td></tr></table></figure>
-<ul>
-<li>indexPath.section: 组</li>
-<li>indexPath.row : 行</li>
-</ul>
-<h3 id="UITableView_u7684_u4E24_u79CD_u6837_u5F0F"><a href="#UITableView_u7684_u4E24_u79CD_u6837_u5F0F" class="headerlink" title="UITableView的两种样式"></a>UITableView的两种样式</h3><ul>
-<li>UITableViewStylePlain</li>
-<li>UITableViewStyleGrope</li>
-</ul>
-<h2 id="u6B65_u9AA4"><a href="#u6B65_u9AA4" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li><p>数据源</p>
 </li>
-<li><p>遵守协议</p>
+<li><code>open podfile</code>打开这个文件,描述</li>
+<li><code>pod search AFN</code></li>
+<li><code>pod install</code><ul>
+<li>判断有没有podfile.lock文件,如果有,直接加载podfile.lock,如果没有就加载podfile</li>
+<li><code>--no-repo-update</code>跳过<code>pod repo update</code>,比较快速的导入第三方框架</li>
+<li><code>pod repo update</code>自动更新版本</li>
+</ul>
 </li>
-<li><p>实现方法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一共多少组</span><br><span class="line">每组多少行</span><br><span class="line">每行显示什么</span><br></pre></td></tr></table></figure>
+<li><code>pod update</code><ul>
+<li>更新需要加载框架的版本号,并且创建新的podfile.lock</li>
+</ul>
 </li>
+<li><code>pod -help</code></li>
+<li>podfile.lock <ul>
+<li>pod完一次之后自动生成这个文件,记录当前需要加载的框架版本号</li>
 </ul>
-<h3 id="tableView_u5C5E_u6027"><a href="#tableView_u5C5E_u6027" class="headerlink" title="tableView属性"></a>tableView属性</h3><ul>
-<li>rowHeight:每一行cell的高度</li>
-<li>sectionHeaderHeight:每一组头部的高度</li>
-<li>sectionFooterHeight:每一组尾部的高度</li>
-<li>separatorColor:分割线的颜色</li>
-<li>separatroStyle:分割线的样式</li>
-<li>tableHeaderView:整张表头部的高度</li>
-<li>tableFooterView:整张表尾部的高度</li>
-</ul>
-<h3 id="cell_u53F3_u8FB9_u7684_u6837_u5F0F"><a href="#cell_u53F3_u8FB9_u7684_u6837_u5F0F" class="headerlink" title="cell右边的样式"></a>cell右边的样式</h3><ul>
-<li>accessoryType:样式 </li>
-<li>accessoryView:控件(优先级较高)</li>
-<li>selectionStyle:选中时样式</li>
-<li>selectionBackgroundView:选中时背景View:</li>
-<li>backgroundColor:背景色</li>
-<li>backgroundView:背景View(优先级较高)</li>
-</ul>
-<h3 id="TableView_u4EE3_u7406"><a href="#TableView_u4EE3_u7406" class="headerlink" title="TableView代理"></a>TableView代理</h3><blockquote>
-<p>只有UIControl才能用addTarget</p>
-</blockquote>
-<h4 id="u5E38_u7528_u4EE3_u7406_u65B9_u6CD5"><a href="#u5E38_u7528_u4EE3_u7406_u65B9_u6CD5" class="headerlink" title="- 常用代理方法"></a>- 常用代理方法</h4><ul>
-<li>返回每一组的头部标题</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">viewForHeaderInSection</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回每一组的尾部标题</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">viewForFooterInSection</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回每一组的头部高度</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heightForHeaderInSection</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回每一组的尾部高度</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heightForFooterInSection</span><br></pre></td></tr></table></figure>
-<ul>
-<li>返回每一行cell的高度</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heightForRowAtIndexPath</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选中某一行cell就会调用哪个这个方法</li>
-</ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>tableView:<span class="params">(<span class="variable">UITableView</span> *)</span>tableView didSelectRowAtIndexPath:<span class="params">(<span class="variable">NSIndexPath</span> *)</span>indexPath<span class="params">()</span>;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>取消选中某一行cell就会调用这个方法</li>
-</ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>tableView:<span class="params">(<span class="variable">UITableView</span> *)</span>tableView didDeselectRowAtIndexPath:<span class="params">(<span class="variable">NSIndexPath</span> *)</span>indexPath<span class="params">()</span>;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2015/11/20/常见控件的事件监听/" style="float: left;">
-        ← 常见控件的事件监听
-    </a>
     
-    
-    <a class="pull-right" href="/2015/01/20/segue底层实现/">
-        segue底层实现 →
+    <a class="pull-right" href="/2016/01/03/NSURLSession部分方法/">
+        NSURLSession部分方法 →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/11/17/UITableView/" data-title="浅谈UITableView" data-url="http://glchen.cn/2015/11/17/UITableView/"></div>
+<div class="ds-thread" data-thread-key="2016/01/17/Cocoapods/" data-title="Cocoapods使用" data-url="http://glchen.cn/2016/01/17/Cocoapods/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"glccc"};
 (function() {
