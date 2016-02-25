@@ -117,7 +117,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(9)</small></a></li>
+				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(11)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -242,7 +242,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/01/17/Cocoapods/">Cocoapods使用</a></h3>
+                    <h3><a href="/2016/01/17/Cocoapods简单使用/">Cocoapods简单使用</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2016-01-16T17:01:38.000Z" itemprop="datePublished">
@@ -274,7 +274,7 @@ open podfile打开这个文件,用来写一些添加框架的命令
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2016/01/17/Cocoapods/">More...</a>
+                        <a href="/2016/01/17/Cocoapods简单使用/">More...</a>
                     </p>
                     
                 </div>
@@ -413,7 +413,106 @@ const - 开发中的使用场景
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/11/27/优化/">UITableView性能优化</a></h3>
+                    <h3><a href="/2015/12/22/单例模式浅析/">单例模式浅析</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-12-21T16:05:32.000Z" itemprop="datePublished">
+          2015-12-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/设计模式/'>设计模式</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        单例模式1.概念相关
+单例模式
+在程序运行过程，一个类只有一个实例
+
+
+使用场合
+在整个应用程序中，共享一份资源（这份资源只需要创建初始化1次）
+
+
+
+2. ARC实现单例
+步骤
+
+在类的内部提供一个static修饰的全局变量
+提供一个类方法，方便外界访问
+重写+allocWithZone方法，保证永远都只为单例对象分配一次内存空间
+严谨起见，重写-copyWithZone方法和-MutableCopyWithZone方法
+
+
+相关代码
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/12/22/单例模式浅析/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/12/21/进程与多线程/">进程与多线程</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-12-20T17:02:33.000Z" itemprop="datePublished">
+          2015-12-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/多线程/'>多线程</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        一. 进程, 线程, 多线程基本概念1.1 进程
+进程是指在系统中正在运行的一个应用程序。每个进程之间是独立的，每个进程均运行在其专用且受保护的内存空间内。
+
+
+1.2 线程
+基本概念
+1个进程要想执行任务，必须得有线程（每1个进程至少要有1条线程），线程是进程的基本执行单元，一个进程（程序）的所有任务都在线程中执行。
+
+
+线程的串行
+1个线程中任务的执行是串行的，如果要在1个线程中执行多个任务，那么只能一个一个地按顺序执行这些任务。也
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/12/21/进程与多线程/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/11/27/UITableView性能优化/">UITableView性能优化</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2015-11-27T11:37:01.000Z" itemprop="datePublished">
@@ -445,7 +544,7 @@ tableView内部自带缓存池
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/11/27/优化/">More...</a>
+                        <a href="/2015/11/27/UITableView性能优化/">More...</a>
                     </p>
                     
                 </div>
@@ -562,7 +661,7 @@ resign
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/11/17/UITableView/">浅谈UITableView</a></h3>
+                    <h3><a href="/2015/11/17/UITableView浅谈/">浅谈UITableView</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2015-11-16T17:01:38.000Z" itemprop="datePublished">
@@ -598,46 +697,7 @@ UITabelView:子控件
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/11/17/UITableView/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2015/01/20/segue底层实现/">segue底层实现</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2015-01-20T12:37:01.000Z" itemprop="datePublished">
-          2015-01-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/segue/'>segue</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        performSegueWithIdentifier:底层实现
-根据Identifier标识到StoryBoard去寻找没有这个segue线, 如果有就会帮你创建UIStoryboardSegue对象.
-设置UIStoryboardSegue的来源控制器seg.sourceViewController = self;
-创建Segue对象的目标控制器,并且给seg对象的目标控制器属性赋值
-通知来源控制器,segue线准备好了.会调用来源控
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2015/01/20/segue底层实现/">More...</a>
+                        <a href="/2015/11/17/UITableView浅谈/">More...</a>
                     </p>
                     
                 </div>
@@ -648,7 +708,7 @@ UITabelView:子控件
         
         <nav class="pagination" role="pagination">
           
-          
+          <a class="pull-right" href="/page/2/">Older Posts →</a>
         </nav>
     </div>
 </section>
