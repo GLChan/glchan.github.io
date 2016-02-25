@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>Tag: Ivar | 光立GLChen</title>
+  <title>如何获得文件的MIMEType | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,37 +235,89 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/04/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h4>
-                            
-                            <p><time datetime="2015-04-21T13:01:38.000Z"><a href="/2015/04/21/获取OC类的私有变量/">2015-04-21</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-01-02T14:22:01.000Z" itemprop="datePublished">
+          2015-01-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/多线程网络/'>多线程网络</a>
+    
+    
+</span>
+                <h1>如何获得文件的MIMEType</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>什么是MIMEType</p>
+<p>MIME type的缩写为(Multipurpose Internet Mail Extensions)代表互联网媒体类型(Internet media type)，MIME使用一个简单的字符串组成，最初是为了标识邮件Email附件的类型，在html文件中可以使用content-type属性表示，描述了文件类型的互联网标准。</p>
+<p>MIME类型能包含视频、图像、文本、音频、应用程序等数据。</p>
+</blockquote>
+<hr>
+<h3 id="u83B7_u53D6_u65B9_u6CD5_u4E00_3A"><a href="#u83B7_u53D6_u65B9_u6CD5_u4E00_3A" class="headerlink" title="获取方法一:"></a>获取方法一:</h3><blockquote>
+<p>向该文件发送请求,根据请求头拿到该文件的MIMEType</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">NSString</span> *)getMIMEType&#123;</span><br><span class="line">    <span class="comment">//1. 确定请求路径</span></span><br><span class="line">    <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> fileURLWithPath:<span class="string">@"/Users/xxx/Desktop/abc.mp4"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//2. 创建可变的请求对象</span></span><br><span class="line">    <span class="built_in">NSMutableURLRequest</span> *request = [<span class="built_in">NSMutableURLRequest</span> requestWithURL:url];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//3. 发送请求</span></span><br><span class="line">    <span class="built_in">NSHTTPURLResponse</span> *response = <span class="literal">nil</span>;</span><br><span class="line">    [<span class="built_in">NSURLConnection</span> sendSynchronousRequest:request returningResponse:&amp;response error:<span class="literal">nil</span>];</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//4. 返回MIMEType字符串</span></span><br><span class="line">    <span class="built_in">NSString</span> *mimeType = response<span class="variable">.MIMEType</span>;</span><br><span class="line">    <span class="keyword">return</span> mimeType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u83B7_u5F97_u65B9_u6CD5_u4E8C_3A"><a href="#u83B7_u5F97_u65B9_u6CD5_u4E8C_3A" class="headerlink" title="获得方法二:"></a>获得方法二:</h3><ul>
+<li>调用C语言的API来获得文件的MIMEType</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="built_in">NSString</span> *)mimeTypeForFileAtPath:(<span class="built_in">NSString</span> *)path&#123;</span><br><span class="line">	<span class="comment">//如果指示文件或目录不存在于指定的路径, 则返回nil</span></span><br><span class="line">    <span class="keyword">if</span> (![[[<span class="built_in">NSFileManager</span> alloc] init] fileExistsAtPath:path]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">CFStringRef</span> UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge <span class="built_in">CFStringRef</span>)[path pathExtension], <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">CFStringRef</span> MIMEType = UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType);</span><br><span class="line">    <span class="built_in">CFRelease</span>(UTI);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//如果MIMEType不存在则返回一个任意的二进制数据: octet-stream</span></span><br><span class="line">    <span class="keyword">if</span> (!MIMEType) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">@"application/octet-stream"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (__bridge <span class="built_in">NSString</span> *)(MIMEType)</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CFStringRef: 一个CFString对象</li>
+<li><p>CFStringRef UTTypeCreatePreferredIdentifierForTag ( CFStringRef inTagClass, CFStringRef inTag, CFStringRef inConformingToUTI ); 创建由指定的标签标示的统一类型标识符。</p>
+<ul>
+<li>inTagClass –&gt; kUTTagClassFilenameExtension: 表示该标记是文件扩展名。</li>
+<li>inTag: 路径扩展名</li>
+<li>inConformingToUTI: 如果不为NULL，则返回的统一类型标识必须符合该参数。</li>
+</ul>
+</li>
+<li><p>CFStringRef UTTypeCopyPreferredTagWithClass ( CFStringRef inUTI, CFStringRef inTagClass );</p>
+<ul>
+<li>返回标签的数组（如CFStrings），或NULL，如果没有翻译可用的统一类型标识符转换为指定的类。</li>
+</ul>
+</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/01/03/NSURLSession部分方法/" style="float: left;">
+        ← NSURLSession部分方法
+    </a>
+    
+    
+    <a class="pull-right" href="/2014/12/30/const,static,extern/">
+        const,static,extern →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/01/02/如何获得文件的MIMEType/" data-title="如何获得文件的MIMEType" data-url="http://glchen.cn/2015/01/02/如何获得文件的MIMEType/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

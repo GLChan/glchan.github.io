@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>Tag: Ivar | 光立GLChen</title>
+  <title>UITableView性能优化 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,37 +235,88 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/04/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h4>
-                            
-                            <p><time datetime="2015-04-21T13:01:38.000Z"><a href="/2015/04/21/获取OC类的私有变量/">2015-04-21</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-06-27T11:37:01.000Z" itemprop="datePublished">
+          2015-06-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/UITableView/'>UITableView</a>
+    
+    
+</span>
+                <h1>UITableView性能优化</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<ul>
+<li>默认: 每当一个cell进入屏幕视野,就会调用<code>cellForRowAtIndexPath:</code>这个方法(不管是否为创建过的cell,都会生成一个新的cell)</li>
+</ul>
+<ul>
+<li>优化: (把看不到的对象放到缓存池)</li>
+<li><p>当用户向上滚动的时候有一个cell要显示出来,就将消失的cell放到<strong>缓存池</strong>,然后新的cell就去缓存池里面查看是否有保存相对应<strong>标记</strong>的cell对象,有就取出来将旧的数据修改显示为新显示的数据</p>
+</li>
+<li><p>tableView内部自带缓存池</p>
+<ul>
+<li>去缓存池取可循环利用的cell(如果没有对应标记的cell对象,就自己创建)</li>
+<li>dequeueReusableCellWithIdentifier</li>
+<li>initWithStyle:UITableViewCellStyleDefault reuseIdentifier:</li>
+<li>在创建cell对象的时候必须绑定标识,将来判断的时候才有可判断的标志</li>
+<li>将标志定义为静态局部变量static(只会修改生命周期,不会改变作用域)</li>
+<li>一次性的初始化的属性设置可以放在判断语句里面,就不会频繁调用</li>
+<li>奇偶行,if else要一起使用(不要写初始化判断语句里面)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>优化:<ul>
+<li>直接到缓存池取可循环利用的cell</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>自定义cell</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/01/17/Cocoapods简单使用/" style="float: left;">
+        ← Cocoapods简单使用
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/04/21/获取OC类的私有变量/">
+        利用运行时打印UIPageControl类所有的成员变量 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/06/27/UITableView性能优化/" data-title="UITableView性能优化" data-url="http://glchen.cn/2015/06/27/UITableView性能优化/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

@@ -286,11 +286,129 @@ open podfile打开这个文件,用来写一些添加框架的命令
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/01/03/NSURLSession部分方法/">NSURLSession部分方法</a></h3>
+                    <h3><a href="/2015/06/27/UITableView性能优化/">UITableView性能优化</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2016-01-02T16:31:38.000Z" itemprop="datePublished">
-          2016-01-03
+      <time datetime="2015-06-27T11:37:01.000Z" itemprop="datePublished">
+          2015-06-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/UITableView/'>UITableView</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+默认: 每当一个cell进入屏幕视野,就会调用cellForRowAtIndexPath:这个方法(不管是否为创建过的cell,都会生成一个新的cell)
+
+
+优化: (把看不到的对象放到缓存池)
+当用户向上滚动的时候有一个cell要显示出来,就将消失的cell放到缓存池,然后新的cell就去缓存池里面查看是否有保存相对应标记的cell对象,有就取出来将旧的数据修改显示为新显示的数据
+
+tableView内部自带缓存池
+
+去缓存池取可
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/06/27/UITableView性能优化/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/04/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-04-21T13:01:38.000Z" itemprop="datePublished">
+          2015-04-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/Ivar/'>Ivar</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        #利用运行时打印UIPageControl类所有的成员变量1234567891011// class: 想要获取哪一个类的成员变量列表    //outCount :这个类所有成员变量的总和    unsigned int outCount = 0;    Ivar *ivars = class_copyIvarList([UIPageControl class], &amp;outCount);        for (int i =
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/04/21/获取OC类的私有变量/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/01/20/segue底层实现/">segue底层实现</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-01-20T12:37:01.000Z" itemprop="datePublished">
+          2015-01-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/segue/'>segue</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        performSegueWithIdentifier:底层实现
+根据Identifier标识到StoryBoard去寻找没有这个segue线, 如果有就会帮你创建UIStoryboardSegue对象.
+设置UIStoryboardSegue的来源控制器seg.sourceViewController = self;
+创建Segue对象的目标控制器,并且给seg对象的目标控制器属性赋值
+通知来源控制器,segue线准备好了.会调用来源控
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/01/20/segue底层实现/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2015/01/03/NSURLSession部分方法/">NSURLSession部分方法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-01-02T16:31:38.000Z" itemprop="datePublished">
+          2015-01-03
       </time>
     
     
@@ -313,7 +431,7 @@ open podfile打开这个文件,用来写一些添加框架的命令
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2016/01/03/NSURLSession部分方法/">More...</a>
+                        <a href="/2015/01/03/NSURLSession部分方法/">More...</a>
                     </p>
                     
                 </div>
@@ -325,11 +443,11 @@ open podfile打开这个文件,用来写一些添加框架的命令
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/01/02/如何获得文件的MIMEType/">如何获得文件的MIMEType</a></h3>
+                    <h3><a href="/2015/01/02/如何获得文件的MIMEType/">如何获得文件的MIMEType</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2016-01-02T14:22:01.000Z" itemprop="datePublished">
-          2016-01-02
+      <time datetime="2015-01-02T14:22:01.000Z" itemprop="datePublished">
+          2015-01-02
       </time>
     
     
@@ -355,7 +473,7 @@ MIME类型能包含视频、图像、文本、音频、应用程序等数据。
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2016/01/02/如何获得文件的MIMEType/">More...</a>
+                        <a href="/2015/01/02/如何获得文件的MIMEType/">More...</a>
                     </p>
                     
                 </div>
@@ -367,11 +485,11 @@ MIME类型能包含视频、图像、文本、音频、应用程序等数据。
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/12/30/const,static,extern/">const,static,extern</a></h3>
+                    <h3><a href="/2014/12/30/const,static,extern/">const,static,extern</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-12-29T17:01:38.000Z" itemprop="datePublished">
-          2015-12-30
+      <time datetime="2014-12-29T17:01:38.000Z" itemprop="datePublished">
+          2014-12-30
       </time>
     
     
@@ -401,7 +519,7 @@ const - 开发中的使用场景
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/12/30/const,static,extern/">More...</a>
+                        <a href="/2014/12/30/const,static,extern/">More...</a>
                     </p>
                     
                 </div>
@@ -413,11 +531,11 @@ const - 开发中的使用场景
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/12/22/单例模式浅析/">单例模式浅析</a></h3>
+                    <h3><a href="/2014/12/22/单例模式浅析/">单例模式浅析</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-12-21T16:05:32.000Z" itemprop="datePublished">
-          2015-12-22
+      <time datetime="2014-12-21T16:05:32.000Z" itemprop="datePublished">
+          2014-12-22
       </time>
     
     
@@ -455,7 +573,7 @@ const - 开发中的使用场景
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/12/22/单例模式浅析/">More...</a>
+                        <a href="/2014/12/22/单例模式浅析/">More...</a>
                     </p>
                     
                 </div>
@@ -467,11 +585,11 @@ const - 开发中的使用场景
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/12/21/进程与多线程/">进程与多线程</a></h3>
+                    <h3><a href="/2014/12/21/进程与多线程/">进程与多线程</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-12-20T17:02:33.000Z" itemprop="datePublished">
-          2015-12-21
+      <time datetime="2014-12-20T17:02:33.000Z" itemprop="datePublished">
+          2014-12-21
       </time>
     
     
@@ -500,7 +618,7 @@ const - 开发中的使用场景
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/12/21/进程与多线程/">More...</a>
+                        <a href="/2014/12/21/进程与多线程/">More...</a>
                     </p>
                     
                 </div>
@@ -512,90 +630,11 @@ const - 开发中的使用场景
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/11/27/UITableView性能优化/">UITableView性能优化</a></h3>
+                    <h3><a href="/2014/11/20/常见控件的事件监听/">常见控件的事件监听</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-11-27T11:37:01.000Z" itemprop="datePublished">
-          2015-11-27
-      </time>
-    
-    
-    | 
-    <a href='/tags/UITableView/'>UITableView</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-默认: 每当一个cell进入屏幕视野,就会调用cellForRowAtIndexPath:这个方法(不管是否为创建过的cell,都会生成一个新的cell)
-
-
-优化: (把看不到的对象放到缓存池)
-当用户向上滚动的时候有一个cell要显示出来,就将消失的cell放到缓存池,然后新的cell就去缓存池里面查看是否有保存相对应标记的cell对象,有就取出来将旧的数据修改显示为新显示的数据
-
-tableView内部自带缓存池
-
-去缓存池取可
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2015/11/27/UITableView性能优化/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2015/11/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2015-11-21T13:01:38.000Z" itemprop="datePublished">
-          2015-11-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/Ivar/'>Ivar</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        #利用运行时打印UIPageControl类所有的成员变量1234567891011// class: 想要获取哪一个类的成员变量列表    //outCount :这个类所有成员变量的总和    unsigned int outCount = 0;    Ivar *ivars = class_copyIvarList([UIPageControl class], &amp;outCount);        for (int i =
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2015/11/21/获取OC类的私有变量/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2015/11/20/常见控件的事件监听/">常见控件的事件监听</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2015-11-20T12:37:01.000Z" itemprop="datePublished">
-          2015-11-20
+      <time datetime="2014-11-20T12:37:01.000Z" itemprop="datePublished">
+          2014-11-20
       </time>
     
     
@@ -619,7 +658,7 @@ addTarget: 所有继承UIControl的才能使用
 
 
 UIScrollView
-.delegate
+delegate
 
 
 
@@ -644,60 +683,12 @@ UITextField
 addTarget:
 delegate
 endEditing: 结束编辑
-resign
+resignF
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/11/20/常见控件的事件监听/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2015/11/17/UITableView浅谈/">浅谈UITableView</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2015-11-16T17:01:38.000Z" itemprop="datePublished">
-          2015-11-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/UITableView/'>UITableView</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-继承UIScrollView
-
-cell属性:
-imageView:
-textLabel:
-detailTextLabel:
-contentView:父控件
-UITabelView:子控件
-
-多组数据和单组数组的展示
-需要一个数组源(dataSource)[任何OC类型的对象(必须遵守UITableViewDataSource)]
-
-12345678910//告诉TableView一共有多少组数据-(NSInteger)numberO
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2015/11/17/UITableView浅谈/">More...</a>
+                        <a href="/2014/11/20/常见控件的事件监听/">More...</a>
                     </p>
                     
                 </div>

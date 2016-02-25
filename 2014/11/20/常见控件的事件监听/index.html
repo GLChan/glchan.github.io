@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>Tag: Ivar | 光立GLChen</title>
+  <title>常见控件的事件监听 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,37 +235,101 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/04/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h4>
-                            
-                            <p><time datetime="2015-04-21T13:01:38.000Z"><a href="/2015/04/21/获取OC类的私有变量/">2015-04-21</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2014-11-20T12:37:01.000Z" itemprop="datePublished">
+          2014-11-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/事件监听/'>事件监听</a>
+    
+    
+</span>
+                <h1>常见控件的事件监听</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<ul>
+<li><ol>
+<li>UIButton<ul>
+<li>addTarget: 所有继承UIControl的才能使用</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UIScrollView<ul>
+<li>delegate</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UISegmentedControl<ul>
+<li>addTarget:</li>
+<li>selectedSegmentIndex:默认选取第几个标签</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UISlider<ul>
+<li>addTarget:</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>UITextField<ul>
+<li>addTarget:</li>
+<li>delegate</li>
+<li>endEditing: 结束编辑</li>
+<li>resignFirstResponder:</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2014/12/21/进程与多线程/" style="float: left;">
+        ← 进程与多线程
+    </a>
+    
+    
+    <a class="pull-right" href="/2014/11/17/UITableView浅谈/">
+        浅谈UITableView →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2014/11/20/常见控件的事件监听/" data-title="常见控件的事件监听" data-url="http://glchen.cn/2014/11/20/常见控件的事件监听/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

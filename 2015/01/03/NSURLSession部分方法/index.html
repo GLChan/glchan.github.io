@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>Tag: Ivar | 光立GLChen</title>
+  <title>NSURLSession部分方法 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,37 +235,211 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/04/21/获取OC类的私有变量/">利用运行时打印UIPageControl类所有的成员变量</a></h4>
-                            
-                            <p><time datetime="2015-04-21T13:01:38.000Z"><a href="/2015/04/21/获取OC类的私有变量/">2015-04-21</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-01-02T16:31:38.000Z" itemprop="datePublished">
+          2015-01-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/多线程网络/'>多线程网络</a>
+    
+    
+</span>
+                <h1>NSURLSession部分方法</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="u4E00-_NSURLSession"><a href="#u4E00-_NSURLSession" class="headerlink" title="一. NSURLSession"></a>一. NSURLSession</h2><blockquote>
+<p>-(NSURLSessionDataTask <em>)dataTaskWithRequest:(NSURLRequest </em>)request completionHandler:(void (^)(NSData <em>data, NSURLResponse </em>response, NSError *error))completionHandler`</p>
+</blockquote>
+<ul>
+<li><code>- dataTaskWithRequest:completionHandler:</code><ul>
+<li>第一个参数:请求对象</li>
+<li>第二个参数:completionHandler 当请求结束(成功|失败)的时候调用</li>
+<li>data:响应体</li>
+<li>response:响应头信息</li>
+<li>error:错误信息</li>
+<li>注意:block在子线程中执行</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(NSURLSessionDataTask <em>)dataTaskWithURL:(NSURL </em>)url completionHandler:(void (^)(NSData <em>data, NSURLResponse </em>response, NSError *error))completionHandler</p>
+</blockquote>
+<ul>
+<li><code>- dataTaskWithURL:completionHandler:</code><ul>
+<li>说明:该方法内部会自动将url包装成一个请求对象|GET请求</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(NSURLSessionDataTask <em>)dataTaskWithRequest:(NSURLRequest </em>)request completionHandler:(void (^)(NSData <em>data, NSURLResponse </em>response, NSError *error))completionHandler</p>
+</blockquote>
+<ul>
+<li><code>- dataTaskWithRequest:completionHandler:</code><ul>
+<li>创建检索基于指定的URL请求对象上的URL的内容的任务，并调用完成时的处理程序。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(void)resume</p>
+</blockquote>
+<ul>
+<li><strong>启动</strong>任务,执行任务</li>
+</ul>
+<blockquote>
+<p>-(void)cancle</p>
+</blockquote>
+<ul>
+<li><strong>取消</strong>任务</li>
+</ul>
+<blockquote>
+<p>-(void)suspend</p>
+</blockquote>
+<ul>
+<li><strong>暂停</strong>任务</li>
+</ul>
+<h3 id="Creating_a_Session__u521B_u5EFA_u4E00_u4E2A_u4F1A_u8BDD"><a href="#Creating_a_Session__u521B_u5EFA_u4E00_u4E2A_u4F1A_u8BDD" class="headerlink" title="Creating a Session 创建一个会话"></a>Creating a Session 创建一个会话</h3><blockquote>
+<p>+(NSURLSession <em>)sessionWithConfiguration:(NSURLSessionConfiguration </em>)configuration delegate:(id<nsurlsessiondelegate>)delegate delegateQueue:(NSOperationQueue *)queue</nsurlsessiondelegate></p>
+</blockquote>
+<ul>
+<li><code>+ sessionWithConfiguration:delegate:delegateQueue:</code><ul>
+<li>创建指定的<strong>会话配置</strong>，<strong>委托</strong>和<strong>操作队列</strong>的 会话。</li>
+</ul>
+</li>
+</ul>
+<h2 id="u4E8C-_NSURLSessionTask"><a href="#u4E8C-_NSURLSessionTask" class="headerlink" title="二. NSURLSessionTask"></a>二. NSURLSessionTask</h2><ul>
+<li>NSURLSessionTask<ul>
+<li>NSURLSessionDataTask<ul>
+<li>NSURLSessionUploadTask </li>
+</ul>
+</li>
+<li>NSURLSessionDownloadTask</li>
+</ul>
+</li>
+</ul>
+<h4 id="Adding_Download_Tasks_to_a_Session__u5728_u4F1A_u8BDD_u4E2D_u6DFB_u52A0_u4E00_u4E2A_u4E0B_u8F7D_u4EFB_u52A1"><a href="#Adding_Download_Tasks_to_a_Session__u5728_u4F1A_u8BDD_u4E2D_u6DFB_u52A0_u4E00_u4E2A_u4E0B_u8F7D_u4EFB_u52A1" class="headerlink" title="Adding Download Tasks to a Session 在会话中添加一个下载任务"></a>Adding Download Tasks to a Session 在会话中添加一个下载任务</h4><blockquote>
+<p>-(NSURLSessionDownloadTask <em>)downloadTaskWithURL:(NSURL </em>)url completionHandler:(void (^)(NSURL <em>location, NSURLResponse </em>response, NSError *error))completionHandler</p>
+</blockquote>
+<ul>
+<li>创建一个下载任务检索指定URL的内容，结果保存到一个文件中，并调用完成后的处理程序。<ul>
+<li>接受到数据之后内部会直接写入到沙盒里面(<strong>子线程</strong>)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(NSURLSessionDownloadTask <em>)downloadTaskWithResumeData:(NSData </em>)resumeData</p>
+</blockquote>
+<ul>
+<li>创建一个下载任务，<strong>恢复</strong>先前取消或失败的下载。</li>
+</ul>
+<h4 id="Canceling_a_Download__u53D6_u6D88_u4E0B_u8F7D"><a href="#Canceling_a_Download__u53D6_u6D88_u4E0B_u8F7D" class="headerlink" title="Canceling a Download 取消下载"></a>Canceling a Download 取消下载</h4><blockquote>
+<p>-(void)cancelByProducingResumeData:(void (^)(NSData *resumeData))completionHandler</p>
+</blockquote>
+<ul>
+<li>取消下载并调用恢复数据<strong>以备后用的一个回调</strong>。</li>
+</ul>
+<h2 id="u4E09-_Delegate_Methods"><a href="#u4E09-_Delegate_Methods" class="headerlink" title="三. Delegate Methods"></a>三. Delegate Methods</h2><ol>
+<li>NSURLSessionDelegate</li>
+<li>NSURLSessionTaskDelegate</li>
+<li>NSURLSessionDataDelegate</li>
+<li>NSURLSessionDownloadDelegate</li>
+</ol>
+<h3 id="3-_NSURLSessionDataDelegate"><a href="#3-_NSURLSessionDataDelegate" class="headerlink" title="3. NSURLSessionDataDelegate"></a>3. NSURLSessionDataDelegate</h3><blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session dataTask:(NSURLSessionDataTask </em>)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler</p>
+</blockquote>
+<ul>
+<li>当<strong>接受到服务器响应的时候</strong>调用</li>
+</ul>
+<blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session dataTask:(NSURLSessionDataTask </em>)dataTask didReceiveData:(NSData *)data</p>
+</blockquote>
+<ul>
+<li><strong>接受到服务器返回数据的时候</strong>调用</li>
+</ul>
+<blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session task:(NSURLSessionTask </em>)task didCompleteWithError:(NSError *)error</p>
+</blockquote>
+<ul>
+<li>告诉代理 任务完成数据传输。这个方法当<strong>请求完成的时候</strong>调用</li>
+</ul>
+<h3 id="4-_NSURLSessionDownloadDelegate"><a href="#4-_NSURLSessionDownloadDelegate" class="headerlink" title="4. NSURLSessionDownloadDelegate"></a>4. NSURLSessionDownloadDelegate</h3><blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session downloadTask:(NSURLSessionDownloadTask </em>)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite</p>
+</blockquote>
+<ul>
+<li>写数据(<strong>接收数据之后调用</strong>)<ul>
+<li>bytesWritten:本次写数据的大小</li>
+<li>totalBytesWritten:已经写入数据的大小</li>
+<li>totalBytesExpectedToWrite:要下载文件的总大小</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session downloadTask:(NSURLSessionDownloadTask </em>)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes</p>
+</blockquote>
+<ul>
+<li>当<strong>恢复下载的时候调用</strong></li>
+</ul>
+<blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session downloadTask:(NSURLSessionDownloadTask </em>)downloadTask didFinishDownloadingToURL:(NSURL *)location</p>
+</blockquote>
+<ul>
+<li><strong>当下载完成的时候调用</strong><ul>
+<li>内部已经实现了边下载边写入数据到沙盒的操作</li>
+<li>downloadTask内部时可以拿到响应头信息<ul>
+<li>例如: </li>
+<li>downloadTask.response.suggestedFilename: 响应头的建议名称</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>-(void)URLSession:(NSURLSession <em>)session task:(NSURLSessionTask </em>)task didCompleteWithError:(NSError *)error</p>
+</blockquote>
+<ul>
+<li><strong>整个请求结束的时候调用</strong></li>
+</ul>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/01/20/segue底层实现/" style="float: left;">
+        ← segue底层实现
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/01/02/如何获得文件的MIMEType/">
+        如何获得文件的MIMEType →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/01/03/NSURLSession部分方法/" data-title="NSURLSession部分方法" data-url="http://glchen.cn/2015/01/03/NSURLSession部分方法/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

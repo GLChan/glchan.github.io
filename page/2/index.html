@@ -242,16 +242,16 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2015/01/20/segue底层实现/">segue底层实现</a></h3>
+                    <h3><a href="/2014/11/17/UITableView浅谈/">浅谈UITableView</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2015-01-20T12:37:01.000Z" itemprop="datePublished">
-          2015-01-20
+      <time datetime="2014-11-16T17:01:38.000Z" itemprop="datePublished">
+          2014-11-17
       </time>
     
     
     | 
-    <a href='/tags/segue/'>segue</a>
+    <a href='/tags/UITableView/'>UITableView</a>
     
     
 </span>
@@ -260,16 +260,25 @@
                 <div class="col-md-8">
                     <p>
                       
-                        performSegueWithIdentifier:底层实现
-根据Identifier标识到StoryBoard去寻找没有这个segue线, 如果有就会帮你创建UIStoryboardSegue对象.
-设置UIStoryboardSegue的来源控制器seg.sourceViewController = self;
-创建Segue对象的目标控制器,并且给seg对象的目标控制器属性赋值
-通知来源控制器,segue线准备好了.会调用来源控
+                        
+继承UIScrollView
+
+cell属性:
+imageView:
+textLabel:
+detailTextLabel:
+contentView:父控件
+UITabelView:子控件
+
+多组数据和单组数组的展示
+需要一个数组源(dataSource)[任何OC类型的对象(必须遵守UITableViewDataSource)]
+
+12345678910//告诉TableView一共有多少组数据-(NSInteger)numberO
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2015/01/20/segue底层实现/">More...</a>
+                        <a href="/2014/11/17/UITableView浅谈/">More...</a>
                     </p>
                     
                 </div>
