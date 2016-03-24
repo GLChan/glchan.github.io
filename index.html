@@ -117,7 +117,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(11)</small></a></li>
+				    <li><a href="/categories/iOS/" class="animsition-link">iOS<small>(12)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -286,6 +286,58 @@ open podfile打开这个文件,用来写一些添加框架的命令
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2015/08/27/FMDB/">FMDB简单了解</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2015-08-27T11:53:11.000Z" itemprop="datePublished">
+          2015-08-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/FMDB/'>FMDB</a>,
+    
+    <a href='/tags/SQLite/'>SQLite</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        一. 基本概念 / 优点什么是FMDB
+FMDB是iOS平台的SQLite数据库框架
+FMDB以OC的方式封装了SQLite的C语言API
+
+FMDB的优点
+使用起来更加面向对象，省去了很多麻烦、冗余的C语言代码
+提供了多线程安全的数据库操作方法，有效地防止数据混乱
+
+FMDB的github地址
+https://github.com/ccgus/fmdb
+
+
+二. 核心类FMDB有三个主要的类
+FMDatabase
+
+一个FMDatab
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2015/08/27/FMDB/">More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2015/06/27/UITableView性能优化/">UITableView性能优化</a></h3>
                     <span>
                         <span class="post-meta">
@@ -348,7 +400,7 @@ tableView内部自带缓存池
                 <div class="col-md-8">
                     <p>
                       
-                        #利用运行时打印UIPageControl类所有的成员变量1234567891011// class: 想要获取哪一个类的成员变量列表    //outCount :这个类所有成员变量的总和    unsigned int outCount = 0;    Ivar *ivars = class_copyIvarList([UIPageControl class], &amp;outCount);        for (int i =
+                        利用运行时打印UIPageControl类所有的成员变量1234567891011// class: 想要获取哪一个类的成员变量列表    //outCount :这个类所有成员变量的总和    unsigned int outCount = 0;    Ivar *ivars = class_copyIvarList([UIPageControl class], &amp;outCount);        for (int i = 
                       
                     </p>
                     
@@ -619,76 +671,6 @@ const - 开发中的使用场景
                     
                     <p class="pull-right readMore">
                         <a href="/2014/12/21/进程与多线程/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2014/11/20/常见控件的事件监听/">常见控件的事件监听</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2014-11-20T12:37:01.000Z" itemprop="datePublished">
-          2014-11-20
-      </time>
-    
-    
-    | 
-    <a href='/tags/事件监听/'>事件监听</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-
-UIButton
-addTarget: 所有继承UIControl的才能使用
-
-
-
-
-
-UIScrollView
-delegate
-
-
-
-
-
-UISegmentedControl
-addTarget:
-selectedSegmentIndex:默认选取第几个标签
-
-
-
-
-
-UISlider
-addTarget:
-
-
-
-
-
-UITextField
-addTarget:
-delegate
-endEditing: 结束编辑
-resignF
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2014/11/20/常见控件的事件监听/">More...</a>
                     </p>
                     
                 </div>

@@ -18,7 +18,7 @@
 
 <head>
 <meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I" />
-  <title>光立GLChen</title>
+  <title>FMDB简单了解 | 光立GLChen</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -85,7 +85,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -234,143 +234,160 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2014/11/20/常见控件的事件监听/">常见控件的事件监听</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2014-11-20T12:37:01.000Z" itemprop="datePublished">
-          2014-11-20
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-08-27T11:53:11.000Z" itemprop="datePublished">
+          2015-08-27
       </time>
     
     
     | 
-    <a href='/tags/事件监听/'>事件监听</a>
+    <a href='/tags/FMDB/'>FMDB</a>,
+    
+    <a href='/tags/SQLite/'>SQLite</a>
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-
-UIButton
-addTarget: 所有继承UIControl的才能使用
-
-
-
-
-
-UIScrollView
-delegate
-
-
-
-
-
-UISegmentedControl
-addTarget:
-selectedSegmentIndex:默认选取第几个标签
-
-
-
-
-
-UISlider
-addTarget:
-
-
-
-
-
-UITextField
-addTarget:
-delegate
-endEditing: 结束编辑
-resignF
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2014/11/20/常见控件的事件监听/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>FMDB简单了解</h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2014/11/17/UITableView浅谈/">浅谈UITableView</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2014-11-16T17:01:38.000Z" itemprop="datePublished">
-          2014-11-17
-      </time>
-    
-    
-    | 
-    <a href='/tags/UITableView/'>UITableView</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-继承UIScrollView
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="u4E00-__u57FA_u672C_u6982_u5FF5_/__u4F18_u70B9"><a href="#u4E00-__u57FA_u672C_u6982_u5FF5_/__u4F18_u70B9" class="headerlink" title="一. 基本概念 / 优点"></a>一. 基本概念 / 优点</h1><h3 id="u4EC0_u4E48_u662FFMDB"><a href="#u4EC0_u4E48_u662FFMDB" class="headerlink" title="什么是FMDB"></a>什么是FMDB</h3><ul>
+<li>FMDB是iOS平台的SQLite数据库框架</li>
+<li>FMDB以OC的方式封装了SQLite的C语言API</li>
+</ul>
+<h3 id="FMDB_u7684_u4F18_u70B9"><a href="#FMDB_u7684_u4F18_u70B9" class="headerlink" title="FMDB的优点"></a>FMDB的优点</h3><ul>
+<li>使用起来更加面向对象，省去了很多麻烦、冗余的C语言代码</li>
+<li>提供了多线程安全的数据库操作方法，有效地防止数据混乱</li>
+</ul>
+<h3 id="FMDB_u7684github_u5730_u5740"><a href="#FMDB_u7684github_u5730_u5740" class="headerlink" title="FMDB的github地址"></a>FMDB的github地址</h3><blockquote>
+<p><a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">https://github.com/ccgus/fmdb</a></p>
+</blockquote>
+<hr>
+<h1 id="u4E8C-__u6838_u5FC3_u7C7B"><a href="#u4E8C-__u6838_u5FC3_u7C7B" class="headerlink" title="二. 核心类"></a>二. 核心类</h1><h3 id="FMDB_u6709_u4E09_u4E2A_u4E3B_u8981_u7684_u7C7B"><a href="#FMDB_u6709_u4E09_u4E2A_u4E3B_u8981_u7684_u7C7B" class="headerlink" title="FMDB有三个主要的类"></a>FMDB有三个主要的类</h3><ol>
+<li><p>FMDatabase</p>
+<ul>
+<li>一个FMDatabase对象就代表一个单独的SQLite数据库<br>用来执行SQL语句</li>
+</ul>
+</li>
+<li><p>FMResultSet</p>
+<ul>
+<li>使用FMDatabase执行查询后的结果集</li>
+</ul>
+</li>
+<li><p>FMDatabaseQueue</p>
+<ul>
+<li>用于在多线程中执行多个查询或更新，它是线程安全的</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="u4E09-__u6570_u636E_u5E93_u64CD_u4F5C"><a href="#u4E09-__u6570_u636E_u5E93_u64CD_u4F5C" class="headerlink" title="三. 数据库操作"></a>三. 数据库操作</h1><h2 id="1-__u6253_u5F00_u6570_u636E_u5E93"><a href="#1-__u6253_u5F00_u6570_u636E_u5E93" class="headerlink" title="1. 打开数据库"></a>1. 打开数据库</h2><ul>
+<li>通过指定SQLite数据库文件路径来创建FMDatabase对象</li>
+</ul>
+<pre><code class="objc">FMDatabase *db = [FMDatabase databaseWithPath:path];
+<span class="keyword">if</span> (![db open]) {
+    <span class="built_in">NSLog</span>(<span class="string">@"数据库打开失败！"</span>);
+}
+</code></pre>
+<h4 id="u6587_u4EF6_u8DEF_u5F84_u6709_u4E09_u79CD_u60C5_u51B5"><a href="#u6587_u4EF6_u8DEF_u5F84_u6709_u4E09_u79CD_u60C5_u51B5" class="headerlink" title="文件路径有三种情况"></a>文件路径有三种情况</h4><ol>
+<li>具体文件路径<ul>
+<li>如果不存在会自动创建</li>
+</ul>
+</li>
+<li>空字符串@””<ul>
+<li>会在临时目录创建一个空的数据库</li>
+<li>当FMDatabase连接关闭时，数据库文件也被删除</li>
+</ul>
+</li>
+<li>nil<ul>
+<li>会创建一个内存中临时数据库，当FMDatabase连接关闭时，数据库会被销毁</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-__u6267_u884C_u66F4_u65B0"><a href="#2-__u6267_u884C_u66F4_u65B0" class="headerlink" title="2. 执行更新"></a>2. 执行更新</h2><ul>
+<li>在FMDB中，除查询以外的所有操作，都称为“更新”<ul>
+<li><code>create</code>、<code>drop</code>、<code>insert</code>、<code>update</code>、<code>delete</code>等</li>
+</ul>
+</li>
+<li>使用executeUpdate:方法执行更新<ul>
+<li><code>- (BOOL)executeUpdate:(NSString*)sql, ...</code></li>
+<li><code>- (BOOL)executeUpdateWithFormat:(NSString*)format, ...</code></li>
+<li><code>- (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments</code></li>
+</ul>
+</li>
+<li>示例<ul>
+<li>[db executeUpdate:@”UPDATE t_student SET age = ? WHERE name = ?;”, @20, @”Jack”]</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-__u6267_u884C_u67E5_u8BE2"><a href="#3-__u6267_u884C_u67E5_u8BE2" class="headerlink" title="3. 执行查询"></a>3. 执行查询</h2><ul>
+<li>查询方法<ul>
+<li><code>- (FMResultSet *)executeQuery:(NSString *)sql, ...</code></li>
+<li><code>- (FMResultSet *)executeQueryWithFormat:(NSString *)format, ...</code></li>
+<li><code>- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments</code></li>
+</ul>
+</li>
+<li>示例</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询数据</span>FMResultSet *rs = [db <span class="string">executeQuery:</span>@<span class="string">"SELECT * FROM t_student"</span>];<span class="comment">// 遍历结果集</span><span class="keyword">while</span> ([rs next]) &#123;    NSString *name = [rs <span class="string">stringForColumn:</span>@<span class="string">"name"</span>];    <span class="typename">int</span> age = [rs <span class="string">intForColumn:</span>@<span class="string">"age"</span>];    <span class="typename">double</span> score = [rs <span class="string">doubleForColumn:</span>@<span class="string">"score"</span>];&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="u56DB-_FMDatabaseQueue"><a href="#u56DB-_FMDatabaseQueue" class="headerlink" title="四. FMDatabaseQueue"></a>四. FMDatabaseQueue</h1><ul>
+<li>FMDatabase这个类是线程不安全的，如果在多个线程中同时使用一个FMDatabase实例，会造成数据混乱等问题</li>
+<li>为了保证线程安全，FMDB提供方便快捷的FMDatabaseQueue类</li>
+</ul>
+<h3 id="FMDatabaseQueue_u7684_u521B_u5EFA"><a href="#FMDatabaseQueue_u7684_u521B_u5EFA" class="headerlink" title="FMDatabaseQueue的创建"></a>FMDatabaseQueue的创建</h3><blockquote>
+<p>FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:path];</p>
+</blockquote>
+<h3 id="u7B80_u5355_u4F7F_u7528"><a href="#u7B80_u5355_u4F7F_u7528" class="headerlink" title="简单使用"></a>简单使用</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">[queue inDatabase:^<span class="list">(<span class="keyword">FMDatabase</span> *db)</span> <span class="collection">&#123;    <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO t_student(name) VALUES (?)"</span>, @<span class="string">"Jack"</span>]</span><span class="comment">;</span>    <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO t_student(name) VALUES (?)"</span>, @<span class="string">"Rose"</span>]</span><span class="comment">;</span>    <span class="collection">[db executeUpdate:@<span class="string">"INSERT INTO t_student(name) VALUES (?)"</span>, @<span class="string">"Jim"</span>]</span><span class="comment">;    </span>    FMResultSet *rs = <span class="collection">[db executeQuery:@<span class="string">"select * from t_student"</span>]</span><span class="comment">;</span>    while <span class="list">(<span class="collection">[rs next]</span>)</span> <span class="collection">&#123;        // ...    &#125;</span>&#125;</span>]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h4 id="u4F7F_u7528_u4E8B_u52A1"><a href="#u4F7F_u7528_u4E8B_u52A1" class="headerlink" title="使用事务"></a>使用事务</h4><pre><code>
+[queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+    [db executeUpdate:@&quot;INSERT INTO t_student(name) VALUES (?)&quot;, @&quot;Jack&quot;];
+    [db executeUpdate:@&quot;INSERT INTO t_student(name) VALUES (?)&quot;, @&quot;Rose&quot;];
+    [db executeUpdate:@&quot;INSERT INTO t_student(name) VALUES (?)&quot;, @&quot;Jim&quot;];
 
-cell属性:
-imageView:
-textLabel:
-detailTextLabel:
-contentView:父控件
-UITabelView:子控件
-
-多组数据和单组数组的展示
-需要一个数组源(dataSource)[任何OC类型的对象(必须遵守UITableViewDataSource)]
-
-12345678910//告诉TableView一共有多少组数据-(NSInteger)numberO
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2014/11/17/UITableView浅谈/">More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+    FMResultSet *rs = [db executeQuery:@&quot;select * from t_student&quot;];
+    while ([rs next]) {
+        //...
+    }
+}];
+</code></pre>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
         <nav class="pagination" role="pagination">
-          <a class="pull-left" href="/">← Newer Posts</a>
-          
-        </nav>
+    
+    <a class="pull-left" href="/2016/01/17/Cocoapods简单使用/" style="float: left;">
+        ← Cocoapods简单使用
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/06/27/UITableView性能优化/">
+        UITableView性能优化 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/08/27/FMDB/" data-title="FMDB简单了解" data-url="http://glchen.cn/2015/08/27/FMDB/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"glccc"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>哇哈哈哈哈哈哈啊哈哈哈哈哈哈哈O(∩_∩)O哈哈哈~</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
