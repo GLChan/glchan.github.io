@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glchen.cn/"/>
-  <updated>2016-10-20T13:23:49.000Z</updated>
+  <updated>2016-10-21T03:21:59.000Z</updated>
   <id>http://glchen.cn/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HEXO👋</title>
+    <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
+    <published>2016-10-21T03:21:00.000Z</published>
+    <updated>2016-10-21T03:21:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。</p>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<p>解决方法: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<p>如果还不行，重新装<code>hexo-cli</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;/p&gt;
+&lt;h3 id=&quot;ERROR&quot;&gt;&lt;a href=&quot;#ERROR&quot; class=&quot;headerlink&quot; title=&quot;ERROR&quot;&gt;&lt;/a&gt;ERROR&lt;/h3&gt;&lt;figure c
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
