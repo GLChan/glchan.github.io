@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://glchen.cn/2016/09/07/text/</loc>
-    
-    <lastmod>2016-10-20T13:23:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://glchen.cn/2016/10/20/hello-world/</loc>
     
     <lastmod>2016-10-20T13:23:49.000Z</lastmod>
@@ -16,7 +9,7 @@
   </url>
   
   <url>
-    <loc>http://glchen.cn/tags/index.html</loc>
+    <loc>http://glchen.cn/2016/09/07/text/</loc>
     
     <lastmod>2016-10-20T13:23:49.000Z</lastmod>
     
@@ -24,6 +17,13 @@
   
   <url>
     <loc>http://glchen.cn/categories/index.html</loc>
+    
+    <lastmod>2016-10-20T13:23:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://glchen.cn/tags/index.html</loc>
     
     <lastmod>2016-10-20T13:23:49.000Z</lastmod>
     

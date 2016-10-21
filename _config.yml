@@ -60,6 +60,13 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:GLChan/glchan.github.io.git
+  branch: master
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -72,9 +79,3 @@ archive_generator:
     daily: false
 
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:GLChan/glchan.github.io.git
-  branch: master
