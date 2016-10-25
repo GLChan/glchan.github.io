@@ -27,5 +27,12 @@ $ npm uninstall hexo-cli -g
 $ npm install hexo-cli -g
 ```
 
+如果还不行，重新装`dtrace-provider`
+
+```bash
+npm uninstall dtrace-provider
+npm install -g dtrace-provider
+```
+
 ### 换了电脑之后`hexo d`无效？
 解决方法: 删除博客目录下的`.deploy_git`文件夹
