@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glchen.cn/"/>
-  <updated>2016-12-09T05:57:41.000Z</updated>
+  <updated>2016-12-09T06:18:50.000Z</updated>
   <id>http://glchen.cn/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Axure 中如何设置移动端界面的超过屏幕高度滚动</title>
+    <link href="http://glchen.cn/2016/10/26/2016-10-26Axure%20%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%B6%85%E8%BF%87%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%BB%9A%E5%8A%A8/"/>
+    <id>http://glchen.cn/2016/10/26/2016-10-26Axure 中如何设置移动端界面的超过屏幕高度滚动/</id>
+    <published>2016-10-26T15:24:05.000Z</published>
+    <updated>2016-12-09T06:18:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Axure-中如何设置移动端界面的超过屏幕高度滚动"><a href="#Axure-中如何设置移动端界面的超过屏幕高度滚动" class="headerlink" title="Axure 中如何设置移动端界面的超过屏幕高度滚动"></a>Axure 中如何设置移动端界面的超过屏幕高度滚动</h3><ol>
+<li>在界面中放置固定大小的动态面板</li>
+<li>在动态面板中设计原型</li>
+<li>进入动态面板界面</li>
+<li>右侧检视：面板状态 － 滚动条 － 自动显示垂直滚动条</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Axure-中如何设置移动端界面的超过屏幕高度滚动&quot;&gt;&lt;a href=&quot;#Axure-中如何设置移动端界面的超过屏幕高度滚动&quot; class=&quot;headerlink&quot; title=&quot;Axure 中如何设置移动端界面的超过屏幕高度滚动&quot;&gt;&lt;/a&gt;Axure 中如何设置
+    
+    </summary>
+    
+    
+      <category term="Axure" scheme="http://glchen.cn/tags/Axure/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于成长？</title>
     <link href="http://glchen.cn/2016/10/22/2016-10-22%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
     <id>http://glchen.cn/2016/10/22/2016-10-22关于成长？/</id>
     <published>2016-10-22T15:24:05.000Z</published>
-    <updated>2016-12-09T05:57:41.000Z</updated>
+    <updated>2016-12-09T06:19:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。</p>
 <p>工作虽然忙碌，除了工作之外也想学很多的东西，希望自己能养成写作的习惯吧，然后，学更多的东西，充实自己。</p>
@@ -36,6 +62,52 @@
     </summary>
     
     
+      <category term="Growth" scheme="http://glchen.cn/tags/Growth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo在不通电脑同步</title>
+    <link href="http://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
+    <id>http://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
+    <published>2016-10-21T03:21:00.000Z</published>
+    <updated>2016-12-09T06:18:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+<p>一、关于搭建的流程</p>
+<ol>
+<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="external">http://CrazyMilk.github.io；</a></li>
+<li>创建两个分支：master 与 hexo；</li>
+<li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
+<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
+<li>修改_config.yml中的deploy参数，分支应为master；</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
+<li>执行hexo g -d生成网站并部署到GitHub上。</li>
+</ol>
+<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="external">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
+<p>二、关于日常的改动流程<br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
+<p>三、本地资料丢失后的流程<br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<ol>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
+<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作者：CrazyMilk&lt;br&gt;链接：&lt;a href=&quot;https://www.zhihu.com/question/21193762/answer/79109280&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com
+    
+    </summary>
+    
+    
+      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
+    
   </entry>
   
   <entry>
@@ -43,7 +115,7 @@
     <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-10-25T01:53:52.000Z</updated>
+    <updated>2016-12-09T06:18:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。</p>
 <h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
@@ -63,6 +135,8 @@
     
     </summary>
     
+    
+      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
     
   </entry>
   
