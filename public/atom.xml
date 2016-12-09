@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glchen.cn/"/>
-  <updated>2016-12-09T06:25:00.000Z</updated>
+  <updated>2016-12-09T06:26:30.000Z</updated>
   <id>http://glchen.cn/</id>
   
   <author>
@@ -20,20 +20,23 @@
     <link href="http://glchen.cn/2016/10/26/2016-10-26Axure%20%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%B6%85%E8%BF%87%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%BB%9A%E5%8A%A8/"/>
     <id>http://glchen.cn/2016/10/26/2016-10-26Axure 中如何设置移动端界面的超过屏幕高度滚动/</id>
     <published>2016-10-26T15:24:05.000Z</published>
-    <updated>2016-12-09T06:25:00.000Z</updated>
+    <updated>2016-12-09T06:26:30.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Axure 中如何设置移动端界面的超过屏幕高度滚动<br><a id="more"></a></p>
-<ol>
+    <content type="html"><![CDATA[<ol>
 <li>在界面中放置固定大小的动态面板</li>
 <li>在动态面板中设计原型</li>
 <li>进入动态面板界面</li>
-<li>右侧检视：面板状态 － 滚动条 － 自动显示垂直滚动条</li>
+<li>右侧检视：面板状态 － 滚动条 － 自动显示垂直滚动条<a id="more"></a></li>
 </ol>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Axure 中如何设置移动端界面的超过屏幕高度滚动&lt;br&gt;
+      &lt;ol&gt;
+&lt;li&gt;在界面中放置固定大小的动态面板&lt;/li&gt;
+&lt;li&gt;在动态面板中设计原型&lt;/li&gt;
+&lt;li&gt;进入动态面板界面&lt;/li&gt;
+&lt;li&gt;右侧检视：面板状态 － 滚动条 － 自动显示垂直滚动条
     
     </summary>
     
@@ -47,18 +50,17 @@
     <link href="http://glchen.cn/2016/10/22/2016-10-22%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
     <id>http://glchen.cn/2016/10/22/2016-10-22关于成长？/</id>
     <published>2016-10-22T15:24:05.000Z</published>
-    <updated>2016-12-09T06:19:19.000Z</updated>
+    <updated>2016-12-09T06:26:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。</p>
+    <content type="html"><![CDATA[<p>写点什么。<br><a id="more"></a></p>
+<p>之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。</p>
 <p>工作虽然忙碌，除了工作之外也想学很多的东西，希望自己能养成写作的习惯吧，然后，学更多的东西，充实自己。</p>
 <p>可能前阵子太忙了，感觉身体比以前差了许多，所以最近开始做一些运动，希望会有点用处。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。&lt;/p&gt;
-&lt;p&gt;工作虽然忙碌，除了工作之外也想学很多的东西，希望自己能养成写作的习惯吧，然后，学更多的东西，充实自己。&lt;/p&gt;
-&lt;p&gt;可能前阵子太忙了，感
+      &lt;p&gt;写点什么。&lt;br&gt;
     
     </summary>
     
@@ -72,9 +74,9 @@
     <link href="http://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
     <id>http://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-12-09T06:18:37.000Z</updated>
+    <updated>2016-12-09T06:28:53.000Z</updated>
     
-    <content type="html"><![CDATA[<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+    <content type="html"><![CDATA[<p>HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。<br><a id="more"></a></p>
 <p>一、关于搭建的流程</p>
 <ol>
 <li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="external">http://CrazyMilk.github.io；</a></li>
@@ -98,11 +100,12 @@
 <li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
 <li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
 </ol>
+<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;作者：CrazyMilk&lt;br&gt;链接：&lt;a href=&quot;https://www.zhihu.com/question/21193762/answer/79109280&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com
+      &lt;p&gt;HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。&lt;br&gt;
     
     </summary>
     
@@ -116,9 +119,9 @@
     <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-12-09T06:18:25.000Z</updated>
+    <updated>2016-12-09T06:26:40.000Z</updated>
     
-    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。</p>
+    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
 <h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
 <p>解决方法: </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
@@ -131,8 +134,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;/p&gt;
-&lt;h3 id=&quot;ERROR&quot;&gt;&lt;a href=&quot;#ERROR&quot; class=&quot;headerlink&quot; title=&quot;ERROR&quot;&gt;&lt;/a&gt;ERROR&lt;/h3&gt;&lt;figure c
+      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
     
     </summary>
     
