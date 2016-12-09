@@ -4,10 +4,8 @@ date: 2016-10-21 11:21:00
 tags: HEXO
 ---
 
-作者：CrazyMilk
-链接：https://www.zhihu.com/question/21193762/answer/79109280
-来源：知乎
-著作权归作者所有，转载请联系作者获得授权。
+HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。
+<!--more-->
 
 一、关于搭建的流程
 
@@ -35,3 +33,9 @@ tags: HEXO
 
 1. 使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；
 2. 在本地新拷贝的http://CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。
+
+
+作者：CrazyMilk
+链接：https://www.zhihu.com/question/21193762/answer/79109280
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
