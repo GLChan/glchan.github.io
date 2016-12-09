@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glchen.cn/"/>
-  <updated>2016-10-24T15:29:09.000Z</updated>
+  <updated>2016-12-09T05:57:41.000Z</updated>
   <id>http://glchen.cn/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>关于成长？</title>
-    <link href="http://glchen.cn/2016/10/22/%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
-    <id>http://glchen.cn/2016/10/22/关于成长？/</id>
+    <link href="http://glchen.cn/2016/10/22/2016-10-22%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
+    <id>http://glchen.cn/2016/10/22/2016-10-22关于成长？/</id>
     <published>2016-10-22T15:24:05.000Z</published>
-    <updated>2016-10-24T15:29:09.000Z</updated>
+    <updated>2016-12-09T05:57:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。</p>
 <p>工作虽然忙碌，除了工作之外也想学很多的东西，希望自己能养成写作的习惯吧，然后，学更多的东西，充实自己。</p>
@@ -60,33 +60,6 @@
     
       &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;/p&gt;
 &lt;h3 id=&quot;ERROR&quot;&gt;&lt;a href=&quot;#ERROR&quot; class=&quot;headerlink&quot; title=&quot;ERROR&quot;&gt;&lt;/a&gt;ERROR&lt;/h3&gt;&lt;figure c
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://glchen.cn/2016/10/20/hello-world/"/>
-    <id>http://glchen.cn/2016/10/20/hello-world/</id>
-    <published>2016-10-20T03:21:00.000Z</published>
-    <updated>2016-10-24T15:24:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
     
