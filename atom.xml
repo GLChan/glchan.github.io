@@ -70,6 +70,35 @@
   </entry>
   
   <entry>
+    <title>HEXO👋</title>
+    <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
+    <published>2016-10-21T03:21:00.000Z</published>
+    <updated>2016-12-09T06:26:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<p>解决方法: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<p>如果还不行，重新装<code>hexo-cli</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<p>如果还不行，重新装<code>dtrace-provider</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
+<h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo在不通电脑同步</title>
     <link href="http://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
     <id>http://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
@@ -106,35 +135,6 @@
     <summary type="html">
     
       &lt;p&gt;HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO👋</title>
-    <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
-    <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
-    <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-12-09T06:26:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
-<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
-<p>解决方法: </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
-<p>如果还不行，重新装<code>hexo-cli</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<p>如果还不行，重新装<code>dtrace-provider</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
-<h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
     
     </summary>
     
