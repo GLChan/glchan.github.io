@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://glchen.cn/"/>
-  <updated>2016-12-09T06:26:30.000Z</updated>
+  <updated>2017-03-09T03:09:11.000Z</updated>
   <id>http://glchen.cn/</id>
   
   <author>
@@ -16,11 +16,151 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jQuery File Upload 插件使用</title>
+    <link href="http://glchen.cn/2017/03/09/jQuery-File-Upload-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    <id>http://glchen.cn/2017/03/09/jQuery-File-Upload-插件使用/</id>
+    <published>2017-03-09T03:00:37.000Z</published>
+    <updated>2017-03-09T03:09:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>前阵子有在开发前端，用到了这个<code>jQuery File Upload</code>插件用来上传文件，也遇到了个适配IE8的坑，记录一下。</p>
+<ul>
+<li>Demo<ul>
+<li><a href="https://blueimp.github.io/jQuery-File-Upload/" target="_blank" rel="external">https://blueimp.github.io/jQuery-File-Upload/</a></li>
+</ul>
+</li>
+<li>Github<ul>
+<li><a href="https://github.com/blueimp/jQuery-File-Upload" target="_blank" rel="external">https://github.com/blueimp/jQuery-File-Upload</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$(&apos;#proImgsUpload&apos;).fileupload(&#123;</div><div class="line">	url : url,</div><div class="line">	autoUpload : true, // 默认</div><div class="line">	</div><div class="line">	add : function(e, data)&#123; // 打开文件的回调</div><div class="line">		data.submit(); // 文件开始上传的事件</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	progressall : function(e, data)&#123;</div><div class="line">		var progress = parseInt(data.loaded / data.total * 100, 10); // 上传进度</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	done : function(e, data)&#123;</div><div class="line">		// 上传成功</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="适配IE8"><a href="#适配IE8" class="headerlink" title="适配IE8"></a>适配IE8</h3><p>在图片上传成功之后，data.result IE8无法取出服务器返回的数据，而chrome可以。后来网上找了很多方法尝试＝ ＝，才发现IE8里面返回的<code>data.dataType: iframe</code>。而Chrome返回的只有<code>data.data: FormData</code>。</p>
+<ul>
+<li>参考链接<br><a href="http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload" target="_blank" rel="external">http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前阵子有在开发前端，用到了这个&lt;code&gt;jQuery File Upload&lt;/code&gt;插件用来上传文件，也遇到了个适配IE8的坑，记录一下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Demo&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blueimp.github.io/jQuery-File-Upload/&quot;&gt;https://blueimp.github.io/jQuery-File-Upload/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Github&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/blueimp/jQuery-File-Upload&quot;&gt;https://github.com/blueimp/jQuery-File-Upload&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="jQuery" scheme="http://glchen.cn/tags/jQuery/"/>
+    
+      <category term="IE8" scheme="http://glchen.cn/tags/IE8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用CocoaPods时，import找不到头文件</title>
+    <link href="http://glchen.cn/2017/03/09/%E4%BD%BF%E7%94%A8CocoaPods%E6%97%B6%EF%BC%8Cimport%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
+    <id>http://glchen.cn/2017/03/09/使用CocoaPods时，import找不到头文件/</id>
+    <published>2017-03-09T02:56:56.000Z</published>
+    <updated>2017-03-09T02:59:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>没有设置头文件的目录</p>
+<ol>
+<li>在项目的 <code>target</code> -&gt; <code>builds Settings</code> -&gt; <code>User Header Search Paths</code> 添加<code>${SRCROOT}</code> </li>
+<li>值设置成 <code>recursive</code></li>
+</ol>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;没有设置头文件的目录&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在项目的 &lt;code&gt;target&lt;/code&gt; -&amp;gt; &lt;code&gt;builds Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;User Header Search Paths&lt;/code&gt; 添加&lt;code&gt;${SRCROOT}&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;值设置成 &lt;code&gt;recursive&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Xcode删除文件或目录有可能产生的问题</title>
+    <link href="http://glchen.cn/2017/03/09/Xcode%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E6%9C%89%E5%8F%AF%E8%83%BD%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://glchen.cn/2017/03/09/Xcode删除文件或目录有可能产生的问题/</id>
+    <published>2017-03-09T02:48:44.000Z</published>
+    <updated>2017-03-09T02:55:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>从项目中删除了某个目录、文件以后，编译出现警告信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ld: warning: directory not found for option “XXXXXX”</div></pre></td></tr></table></figure>
+<p>消除警告的办法是：</p>
+<ol>
+<li>选择工程, 编译的 (targets)</li>
+<li>选择 Build Settings 菜单</li>
+<li>找到 <code>Library Search Paths</code> 和 <code>Framework Search Paths</code>， 删掉编译报warning的路径即OK</li>
+</ol>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从项目中删除了某个目录、文件以后，编译出现警告信息：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ld: warning: directory not found for option “XXXXXX”&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;消除警告的办法是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择工程, 编译的 (targets)&lt;/li&gt;
+&lt;li&gt;选择 Build Settings 菜单&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;Library Search Paths&lt;/code&gt; 和 &lt;code&gt;Framework Search Paths&lt;/code&gt;， 删掉编译报warning的路径即OK&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>去掉字符串中的HTML标签#Swift3#</title>
+    <link href="http://glchen.cn/2017/03/09/%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84HTML%E6%A0%87%E7%AD%BE-Swift3/"/>
+    <id>http://glchen.cn/2017/03/09/去掉字符串中的HTML标签-Swift3/</id>
+    <published>2017-03-09T02:45:44.000Z</published>
+    <updated>2017-03-09T02:46:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let str = &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;</div><div class="line"></div><div class="line">let newStr = str.replacingOccurrences(of: &quot;&lt;[^&gt;]+&gt;&quot;, with: &quot;&quot;, options: .regularExpression, range: nil)</div><div class="line"></div><div class="line">print(newStr)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>就这样。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;let str = &amp;quot;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;let newStr = str.replacingOccurrences(of: &amp;quot;&amp;lt;[^&amp;gt;]+&amp;gt;&amp;quot;, with: &amp;quot;&amp;quot;, options: .regularExpression, range: nil)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(newStr)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+    
+      <category term="Swift" scheme="http://glchen.cn/tags/Swift/"/>
+    
+      <category term="Swift3" scheme="http://glchen.cn/tags/Swift3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Axure 中如何设置移动端界面的超过屏幕高度滚动</title>
     <link href="http://glchen.cn/2016/10/26/2016-10-26Axure%20%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%B6%85%E8%BF%87%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%BB%9A%E5%8A%A8/"/>
     <id>http://glchen.cn/2016/10/26/2016-10-26Axure 中如何设置移动端界面的超过屏幕高度滚动/</id>
     <published>2016-10-26T15:24:05.000Z</published>
-    <updated>2016-12-09T06:26:30.000Z</updated>
+    <updated>2017-03-09T03:12:18.000Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>在界面中放置固定大小的动态面板</li>
@@ -50,7 +190,7 @@
     <link href="http://glchen.cn/2016/10/22/2016-10-22%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
     <id>http://glchen.cn/2016/10/22/2016-10-22关于成长？/</id>
     <published>2016-10-22T15:24:05.000Z</published>
-    <updated>2016-12-09T06:26:14.000Z</updated>
+    <updated>2017-03-09T03:12:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>写点什么。<br><a id="more"></a></p>
 <p>之前写的博客因为电脑的关系还有没有备份都丢失了，尽管如此，也并没有觉得丢了什么，因为那都不是自己整理或者自己创作的东西。</p>
@@ -74,7 +214,7 @@
     <link href="http://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
     <id>http://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-12-09T06:28:53.000Z</updated>
+    <updated>2017-03-09T03:12:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。<br><a id="more"></a></p>
 <p>一、关于搭建的流程</p>
@@ -119,7 +259,7 @@
     <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2016-12-09T06:26:40.000Z</updated>
+    <updated>2017-03-09T03:12:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
 <h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
