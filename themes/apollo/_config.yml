@@ -1,12 +1,13 @@
 menu:
     Blog: /
     Archive: /archives/
-    Weibo: http://weibo.com/cglcgl000
+    Tag: /tags/
+    # Weibo: http://weibo.com/cglcgl000
     GitHub: https://github.com/GLChan
-    Rss: /atom.xml
+    # Rss: /atom.xml
 
-favicon: /favicon.png
-logo: /favicon.png
+favicon: /favicon2.jpg
+logo: /favicon2.jpg
 
 # Comment
 # e.g disqus: seansun
