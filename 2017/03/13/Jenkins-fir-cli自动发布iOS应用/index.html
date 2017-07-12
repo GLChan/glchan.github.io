@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I"><title> Jenkins+fir-cli自动发布iOS应用 · GLChen</title><meta name="description" content="Jenkins+fir-cli自动发布iOS应用 - GLCHEN"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon2.jpg"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://glchen.cn/atom.xml" title="GLChen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon2.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/tags/" target="_self" class="nav-list-link">TAG</a></li><li class="nav-list-item"><a href="https://github.com/GLChan" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Jenkins+fir-cli自动发布iOS应用</h1><div class="post-info">Mar 13, 2017</div><div class="post-content"><p>最近开发iOS手动打包开始变得频繁，所以集成的自动化也不可避免。在这里记录一下搭建持续集成的服务。</p>
+<a id="more"></a>
+<h1 id="持续集成服务器初级配置-－-Jenkis"><a href="#持续集成服务器初级配置-－-Jenkis" class="headerlink" title="持续集成服务器初级配置 － Jenkis"></a>持续集成服务器初级配置 － Jenkis</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="通过Homebrew安装"><a href="#通过Homebrew安装" class="headerlink" title="通过Homebrew安装"></a>通过Homebrew安装</h4><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install jenkins</div></pre></td></tr></table></figure>
+<p>后台进程服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew services start jenkins</div></pre></td></tr></table></figure>
+<p>如果不想启动后台服务，就只在terminal跑（关闭terminal窗口的同时也会结束进程）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jenkins</div></pre></td></tr></table></figure>
+<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><p>通过<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 或者<a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a> 访问Jenkins的管理后台</p>
+<p>然后会出现<br><img src="http://omooqj50y.bkt.clouddn.com/4233064DE313C1712DFE5B8C624064C8.jpg" alt="Admin Pwd"></p>
+<p>密码就在， copy进来就能登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/mac用户名/.jenkins/secrets/initialAdminPassword</div></pre></td></tr></table></figure>
+<!--### 插件
+之后进入到自定义Jenkins插件安装的界面，共两个选项，可以选择自己想要的，不知道怎么选择的选择左边建议安装(`Install suggested plugins`)的就好。
+
+`Git plugin`，`Subversion Plug-in`也会包括在其中。
+
+![plugin](http://omooqj50y.bkt.clouddn.com/blog/jenkins/QQ20170313-1.png)-->
+<h3 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h3><p>这里可以选择添加也可以选择直接下一步（右下蓝字按钮）<br><img src="http://omooqj50y.bkt.clouddn.com/blog/jenkins/createUser.png?imageView/2/w/400" alt=""></p>
+<h3 id="安装XCode插件-旧版本"><a href="#安装XCode插件-旧版本" class="headerlink" title="安装XCode插件(旧版本)"></a>安装XCode插件(旧版本)</h3><ul>
+<li><a href="https://wiki.jenkins.io/display/JENKINS/Xcode+Plugin" target="_blank" rel="external">XCode 插件 wiki</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.jenkins-ci.plugins/xcode-plugin/1.4.11" target="_blank" rel="external">XCode 插件 1.4.11版本下载地址</a></li>
+</ul>
+<ol>
+<li>下载完之后上传到jenkins<ol>
+<li><img src="http://omooqj50y.bkt.clouddn.com/blog/jenkins/QQ20170712-0@2x.png" alt=""></li>
+<li><img src="http://omooqj50y.bkt.clouddn.com/jenkins%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6.png" alt=""></li>
+</ol>
+</li>
+</ol>
+<h3 id="新建-1"><a href="#新建-1" class="headerlink" title="新建"></a>新建</h3><p>输入项目名称并选择<code>构建一个自由风格的软件项目</code></p>
+<p><img src="http://omooqj50y.bkt.clouddn.com/blog/jenkins/QQ20170313-0.png" alt=""></p>
+<h3 id="配置（本地代码）"><a href="#配置（本地代码）" class="headerlink" title="配置（本地代码）"></a>配置（本地代码）</h3><ol>
+<li>增加构建步骤<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/%E5%A2%9E%E5%8A%A0%E6%9E%84%E5%BB%BA%E6%AD%A5%E9%AA%A4.png?imageView/2/w/270/q/90" alt=""></li>
+</ul>
+</li>
+<li>常规构建配置<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-General-build-settings.png" alt=""></li>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-General-build-settings2.png" alt=""></li>
+</ul>
+</li>
+<li>Code signing 和 keychain 配置<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-keychain-path.png" alt=""></li>
+</ul>
+</li>
+<li>高级XCode构建选项<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-advance-build.png" alt=""></li>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-advance-build2.png" alt=""></li>
+</ul>
+</li>
+</ol>
+<h3 id="自动上传fir"><a href="#自动上传fir" class="headerlink" title="自动上传fir"></a>自动上传fir</h3><p>编译完成之后自动上传到fir</p>
+<ol>
+<li><p>增加构建步骤</p>
+<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-add-shell.png?imageView/2/w/270" alt=""></li>
+<li><p>在Command框中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fir publish &quot;ipa文件路径&quot; -T &quot;fir token&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>备注：没有安装fir命令的要先安装fir</p>
+<p>参考：<a href="http://blog.fir.im/fir-im-practicesguide4/" target="_blank" rel="external">使用Jenkins+fir-cli自动发布Android或iOS应用</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/2017/03/09/jQuery-File-Upload-插件使用/" class="next">NEXT</a></div><div data-thread-key="2017/03/13/Jenkins-fir-cli自动发布iOS应用/" data-title="Jenkins+fir-cli自动发布iOS应用" data-url="http://glchen.cn/2017/03/13/Jenkins-fir-cli自动发布iOS应用/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script><div id="disqus_thread"></div><script>var disqus_shortname = 'GLChen';
+var disqus_identifier = '2017/03/13/Jenkins-fir-cli自动发布iOS应用/';
+var disqus_title = 'Jenkins+fir-cli自动发布iOS应用';
+var disqus_url = 'http://glchen.cn/2017/03/13/Jenkins-fir-cli自动发布iOS应用/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//GLChen.disqus.com/count.js" async></script><div class="copyright"><p>© 2016 - 2017 <a href="http://glchen.cn">GLCHEN</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-71319829-1",'auto');ga('send','pageview');</script></body></html>
