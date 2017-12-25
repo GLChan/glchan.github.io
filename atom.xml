@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://glchen.cn/"/>
-  <updated>2017-07-12T09:04:02.000Z</updated>
-  <id>http://glchen.cn/</id>
+  <link href="https://glchen.cn/"/>
+  <updated>2017-12-25T08:37:47.000Z</updated>
+  <id>https://glchen.cn/</id>
   
   <author>
     <name>GLCHEN</name>
@@ -16,9 +16,83 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>npm的一些使用</title>
+    <link href="https://glchen.cn/2017/12/25/npm%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/"/>
+    <id>https://glchen.cn/2017/12/25/npm的一些使用/</id>
+    <published>2017-12-25T08:31:25.000Z</published>
+    <updated>2017-12-25T08:37:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="package-json-不常用配置"><a href="#package-json-不常用配置" class="headerlink" title="package.json 不常用配置"></a>package.json 不常用配置</h2><ul>
+<li>使用github的组件<br>  - </li>
+<li>使用本地的组件<ul>
+<li>npm install –save ./iview </li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;package-json-不常用配置&quot;&gt;&lt;a href=&quot;#package-json-不常用配置&quot; class=&quot;headerlink&quot; title=&quot;package.json 不常用配置&quot;&gt;&lt;/a&gt;package.json 不常用配置&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="https://glchen.cn/tags/npm/"/>
+    
+      <category term="node" scheme="https://glchen.cn/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue项目记录</title>
+    <link href="https://glchen.cn/2017/06/28/Vue%E9%97%AE%E9%A2%98%E6%94%B6%E5%BD%95/"/>
+    <id>https://glchen.cn/2017/06/28/Vue问题收录/</id>
+    <published>2017-06-28T15:24:05.000Z</published>
+    <updated>2017-12-25T08:21:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>VUE是如何加载main.js文件的<ul>
+<li>如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行npm run dev的时候会出来页面，是因为你根目录下的package.json文件里script配置了”dev”: “node build/dev-server.js”，也就是其实执行的是dev-server.js这个文件，里面有定义var webpackConfig = require(‘./webpack.dev.conf’);因为我们这个脚手架工具里是用webpack来打包项目文件的，依赖的webpack.dev.conf文件里又定义了var baseWebpackConfig = require(‘./webpack.base.conf’);在这个依赖webpack.base.conf文件里面entry入口文件就配置了app: ‘./src/main.js’，所以当你运行npm run dev的时候就从main.js这个入口文件开始执行了</li>
+</ul>
+</li>
+<li>vue Router 路由<ul>
+<li>path : 当前路由对象的路径，如’/view/a’。在定义路径规则的时候，如果你给它提供了一个<code>name</code>属性，则可以在后续使用这条路径规则的时候，直接引用。</li>
+<li>name : 当前路径名字</li>
+<li>component : </li>
+</ul>
+</li>
+<li><code>v-on</code>缩写<ul>
+<li><code>@</code></li>
+</ul>
+</li>
+<li>npm install<ul>
+<li>npm install –save        dependencies :{]</li>
+<li>npm install –save-dev  devDependencies :{}</li>
+<li>package.json</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;VUE是如何加载main.js文件的&lt;ul&gt;
+&lt;li&gt;如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行npm run dev的时候会出来页面，是因为你根目录下的package.json文件里script配置了”dev”: “node buil
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://glchen.cn/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jenkins+fir-cli自动发布iOS应用</title>
-    <link href="http://glchen.cn/2017/03/13/Jenkins-fir-cli%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83iOS%E5%BA%94%E7%94%A8/"/>
-    <id>http://glchen.cn/2017/03/13/Jenkins-fir-cli自动发布iOS应用/</id>
+    <link href="https://glchen.cn/2017/03/13/Jenkins-fir-cli%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83iOS%E5%BA%94%E7%94%A8/"/>
+    <id>https://glchen.cn/2017/03/13/Jenkins-fir-cli自动发布iOS应用/</id>
     <published>2017-03-13T01:40:06.000Z</published>
     <updated>2017-07-12T09:04:02.000Z</updated>
     
@@ -97,16 +171,16 @@
     </summary>
     
     
-      <category term="持续集成" scheme="http://glchen.cn/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+      <category term="持续集成" scheme="https://glchen.cn/tags/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
     
-      <category term="Jenkins" scheme="http://glchen.cn/tags/Jenkins/"/>
+      <category term="Jenkins" scheme="https://glchen.cn/tags/Jenkins/"/>
     
   </entry>
   
   <entry>
     <title>jQuery File Upload 插件使用</title>
-    <link href="http://glchen.cn/2017/03/09/jQuery-File-Upload-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
-    <id>http://glchen.cn/2017/03/09/jQuery-File-Upload-插件使用/</id>
+    <link href="https://glchen.cn/2017/03/09/jQuery-File-Upload-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    <id>https://glchen.cn/2017/03/09/jQuery-File-Upload-插件使用/</id>
     <published>2017-03-09T03:00:37.000Z</published>
     <updated>2017-03-09T03:09:11.000Z</updated>
     
@@ -146,16 +220,16 @@
     </summary>
     
     
-      <category term="jQuery" scheme="http://glchen.cn/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://glchen.cn/tags/jQuery/"/>
     
-      <category term="IE8" scheme="http://glchen.cn/tags/IE8/"/>
+      <category term="IE8" scheme="https://glchen.cn/tags/IE8/"/>
     
   </entry>
   
   <entry>
     <title>使用CocoaPods时，import找不到头文件</title>
-    <link href="http://glchen.cn/2017/03/09/%E4%BD%BF%E7%94%A8CocoaPods%E6%97%B6%EF%BC%8Cimport%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
-    <id>http://glchen.cn/2017/03/09/使用CocoaPods时，import找不到头文件/</id>
+    <link href="https://glchen.cn/2017/03/09/%E4%BD%BF%E7%94%A8CocoaPods%E6%97%B6%EF%BC%8Cimport%E6%89%BE%E4%B8%8D%E5%88%B0%E5%A4%B4%E6%96%87%E4%BB%B6/"/>
+    <id>https://glchen.cn/2017/03/09/使用CocoaPods时，import找不到头文件/</id>
     <published>2017-03-09T02:56:56.000Z</published>
     <updated>2017-03-09T02:59:19.000Z</updated>
     
@@ -177,14 +251,14 @@
     </summary>
     
     
-      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+      <category term="iOS" scheme="https://glchen.cn/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Xcode删除文件或目录有可能产生的问题</title>
-    <link href="http://glchen.cn/2017/03/09/Xcode%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E6%9C%89%E5%8F%AF%E8%83%BD%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://glchen.cn/2017/03/09/Xcode删除文件或目录有可能产生的问题/</id>
+    <link href="https://glchen.cn/2017/03/09/Xcode%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E6%9C%89%E5%8F%AF%E8%83%BD%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://glchen.cn/2017/03/09/Xcode删除文件或目录有可能产生的问题/</id>
     <published>2017-03-09T02:48:44.000Z</published>
     <updated>2017-03-09T02:55:42.000Z</updated>
     
@@ -212,14 +286,14 @@
     </summary>
     
     
-      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+      <category term="iOS" scheme="https://glchen.cn/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>去掉字符串中的HTML标签#Swift3#</title>
-    <link href="http://glchen.cn/2017/03/09/%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84HTML%E6%A0%87%E7%AD%BE-Swift3/"/>
-    <id>http://glchen.cn/2017/03/09/去掉字符串中的HTML标签-Swift3/</id>
+    <link href="https://glchen.cn/2017/03/09/%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84HTML%E6%A0%87%E7%AD%BE-Swift3/"/>
+    <id>https://glchen.cn/2017/03/09/去掉字符串中的HTML标签-Swift3/</id>
     <published>2017-03-09T02:45:44.000Z</published>
     <updated>2017-03-09T02:46:53.000Z</updated>
     
@@ -235,18 +309,18 @@
     </summary>
     
     
-      <category term="iOS" scheme="http://glchen.cn/tags/iOS/"/>
+      <category term="iOS" scheme="https://glchen.cn/tags/iOS/"/>
     
-      <category term="Swift" scheme="http://glchen.cn/tags/Swift/"/>
+      <category term="Swift" scheme="https://glchen.cn/tags/Swift/"/>
     
-      <category term="Swift3" scheme="http://glchen.cn/tags/Swift3/"/>
+      <category term="Swift3" scheme="https://glchen.cn/tags/Swift3/"/>
     
   </entry>
   
   <entry>
     <title>Axure 中如何设置移动端界面的超过屏幕高度滚动</title>
-    <link href="http://glchen.cn/2016/10/26/2016-10-26Axure%20%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%B6%85%E8%BF%87%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%BB%9A%E5%8A%A8/"/>
-    <id>http://glchen.cn/2016/10/26/2016-10-26Axure 中如何设置移动端界面的超过屏幕高度滚动/</id>
+    <link href="https://glchen.cn/2016/10/26/Axure%20%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%95%8C%E9%9D%A2%E7%9A%84%E8%B6%85%E8%BF%87%E5%B1%8F%E5%B9%95%E9%AB%98%E5%BA%A6%E6%BB%9A%E5%8A%A8/"/>
+    <id>https://glchen.cn/2016/10/26/Axure 中如何设置移动端界面的超过屏幕高度滚动/</id>
     <published>2016-10-26T15:24:05.000Z</published>
     <updated>2017-03-09T03:12:18.000Z</updated>
     
@@ -269,14 +343,14 @@
     </summary>
     
     
-      <category term="Axure" scheme="http://glchen.cn/tags/Axure/"/>
+      <category term="Axure" scheme="https://glchen.cn/tags/Axure/"/>
     
   </entry>
   
   <entry>
     <title>关于成长？</title>
-    <link href="http://glchen.cn/2016/10/22/2016-10-22%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
-    <id>http://glchen.cn/2016/10/22/2016-10-22关于成长？/</id>
+    <link href="https://glchen.cn/2016/10/22/%E5%85%B3%E4%BA%8E%E6%88%90%E9%95%BF%EF%BC%9F/"/>
+    <id>https://glchen.cn/2016/10/22/关于成长？/</id>
     <published>2016-10-22T15:24:05.000Z</published>
     <updated>2017-03-09T03:12:10.000Z</updated>
     
@@ -293,14 +367,43 @@
     </summary>
     
     
-      <category term="Growth" scheme="http://glchen.cn/tags/Growth/"/>
+      <category term="Growth" scheme="https://glchen.cn/tags/Growth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO👋</title>
+    <link href="https://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>https://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
+    <published>2016-10-21T03:21:00.000Z</published>
+    <updated>2017-03-09T03:12:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<p>解决方法: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<p>如果还不行，重新装<code>hexo-cli</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<p>如果还不行，重新装<code>dtrace-provider</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
+<h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HEXO" scheme="https://glchen.cn/tags/HEXO/"/>
     
   </entry>
   
   <entry>
     <title>hexo在不通电脑同步</title>
-    <link href="http://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
-    <id>http://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
+    <link href="https://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
+    <id>https://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
     <published>2016-10-21T03:21:00.000Z</published>
     <updated>2017-03-09T03:12:33.000Z</updated>
     
@@ -338,36 +441,7 @@
     </summary>
     
     
-      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HEXO👋</title>
-    <link href="http://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
-    <id>http://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
-    <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2017-03-09T03:12:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
-<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
-<p>解决方法: </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
-<p>如果还不行，重新装<code>hexo-cli</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<p>如果还不行，重新装<code>dtrace-provider</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
-<h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HEXO" scheme="http://glchen.cn/tags/HEXO/"/>
+      <category term="HEXO" scheme="https://glchen.cn/tags/HEXO/"/>
     
   </entry>
   
