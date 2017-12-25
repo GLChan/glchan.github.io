@@ -376,9 +376,34 @@
     <link href="https://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>https://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
     <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2017-03-09T03:12:27.000Z</updated>
+    <updated>2017-12-25T08:53:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。<br><a id="more"></a></p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
+<li><p>新建文章到<code>source/_posts</code>文件夹</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;文件名&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>新建草稿，新草稿会出现在<code>source/_drafts</code>目录下</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &apos;草稿&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>将草稿移动到<code>source/_posts</code>文件夹</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;草稿&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>文件名称</p>
+<ul>
+<li>Hexo 默认以标题做为文件名称，但您可在<code>_config.yml</code>配置文件中编辑 <code>new_post_name</code> 参数来改变默认的文件名称，举例来说，设为 <code>:year-:month-:day-:title.md</code> 可让您更方便的通过日期来管理文章。    </li>
+</ul>
+</li>
+</ul>
 <h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
 <p>解决方法: </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
