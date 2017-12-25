@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glchen.cn/"/>
-  <updated>2017-12-25T08:37:47.000Z</updated>
+  <updated>2017-12-25T13:29:48.000Z</updated>
   <id>https://glchen.cn/</id>
   
   <author>
@@ -20,12 +20,24 @@
     <link href="https://glchen.cn/2017/12/25/npm%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8/"/>
     <id>https://glchen.cn/2017/12/25/npm的一些使用/</id>
     <published>2017-12-25T08:31:25.000Z</published>
-    <updated>2017-12-25T08:37:47.000Z</updated>
+    <updated>2017-12-25T13:29:48.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="package-json-不常用配置"><a href="#package-json-不常用配置" class="headerlink" title="package.json 不常用配置"></a>package.json 不常用配置</h2><ul>
-<li>使用github的组件<br>  - </li>
-<li>使用本地的组件<ul>
-<li>npm install –save ./iview </li>
+    <content type="html"><![CDATA[<h2 id="package-json-配置"><a href="#package-json-配置" class="headerlink" title="package.json 配置"></a>package.json 配置</h2><ul>
+<li><p>使用github的组件</p>
+<ul>
+<li>支持github的 username/modulename 的写法，#后边可以加后缀写明分支hash或标签</li>
+<li><p><code>git://github.com/iview/iview#2.0</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;iview&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;iview&quot;: &quot;git://github.com/iview/iview#2.0&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>使用本地的组件</p>
+<ul>
+<li><code>npm install --save ./iview</code></li>
+<li><p>package.json文件中是这样的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;iview&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;iview&quot;: &quot;file:iview&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -33,8 +45,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;package-json-不常用配置&quot;&gt;&lt;a href=&quot;#package-json-不常用配置&quot; class=&quot;headerlink&quot; title=&quot;package.json 不常用配置&quot;&gt;&lt;/a&gt;package.json 不常用配置&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
+      &lt;h2 id=&quot;package-json-配置&quot;&gt;&lt;a href=&quot;#package-json-配置&quot; class=&quot;headerlink&quot; title=&quot;package.json 配置&quot;&gt;&lt;/a&gt;package.json 配置&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用github的
     
     </summary>
     
