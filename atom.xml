@@ -64,7 +64,7 @@
 <ul>
 <li>支持github的 username/modulename 的写法，#后边可以加后缀写明分支hash或标签</li>
 <li><p><code>git://github.com/iview/iview#2.0</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;iview&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;iview&quot;: &quot;git://github.com/iview/iview#2.0&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;iview&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;iview&quot;: &quot;git://github.com/iview/iview#2.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -74,7 +74,7 @@
 <ul>
 <li><code>npm install --save ./iview</code></li>
 <li><p>package.json文件中是这样的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;iview&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;iview&quot;: &quot;file:iview&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;iview&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;iview&quot;: &quot;file:iview&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -105,13 +105,13 @@
 <li><p>VUE是如何加载main.js文件的</p>
 <ul>
 <li><p>如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行<code>npm run dev</code>的时候会出来页面，是因为你根目录下的<code>package.json</code>文件里script配置了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;dev&quot;: &quot;node build/dev-server.js&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;node build/dev-server.js&quot;</span><br></pre></td></tr></table></figure>
 <p>也就是其实执行的是<code>dev-server.js</code>这个文件，里面有定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var webpackConfig = require(&apos;./webpack.dev.conf&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webpackConfig = require(&apos;./webpack.dev.conf&apos;);</span><br></pre></td></tr></table></figure>
 <p>因为我们这个脚手架工具里是用<code>webpack</code>来打包项目文件的，依赖的<code>webpack.dev.conf</code>文件里又定义了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var baseWebpackConfig = require(&apos;./webpack.base.conf&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var baseWebpackConfig = require(&apos;./webpack.base.conf&apos;);</span><br></pre></td></tr></table></figure>
 <p>在这个依赖<code>webpack.base.conf</code>文件里面<code>entry</code>入口文件就配置了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app: &apos;./src/main.js&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app: &apos;./src/main.js&apos;</span><br></pre></td></tr></table></figure>
 <p>所以当你运行<code>npm run dev</code>的时候就从<code>main.js</code>这个入口文件开始执行了</p>
 </li>
 </ul>
@@ -159,15 +159,15 @@
     <content type="html"><![CDATA[<p>最近开发iOS手动打包开始变得频繁，所以集成的自动化也不可避免。在这里记录一下搭建持续集成的服务。</p>
 <a id="more"></a>
 <h1 id="持续集成服务器初级配置-－-Jenkis"><a href="#持续集成服务器初级配置-－-Jenkis" class="headerlink" title="持续集成服务器初级配置 － Jenkis"></a>持续集成服务器初级配置 － Jenkis</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="通过Homebrew安装"><a href="#通过Homebrew安装" class="headerlink" title="通过Homebrew安装"></a>通过Homebrew安装</h4><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br></pre></td></tr></table></figure>
 <p>后台进程服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew services start jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure>
 <p>如果不想启动后台服务，就只在terminal跑（关闭terminal窗口的同时也会结束进程）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jenkins</div></pre></td></tr></table></figure>
-<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><p>通过<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 或者<a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a> 访问Jenkins的管理后台</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><p>通过<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> 或者<a href="http://127.0.0.1:8080/" target="_blank" rel="noopener">http://127.0.0.1:8080/</a> 访问Jenkins的管理后台</p>
 <p>然后会出现<br><img src="http://omooqj50y.bkt.clouddn.com/4233064DE313C1712DFE5B8C624064C8.jpg" alt="Admin Pwd"></p>
 <p>密码就在， copy进来就能登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/mac用户名/.jenkins/secrets/initialAdminPassword</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/mac用户名/.jenkins/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
 <!--### 插件
 之后进入到自定义Jenkins插件安装的界面，共两个选项，可以选择自己想要的，不知道怎么选择的选择左边建议安装(`Install suggested plugins`)的就好。
 
@@ -176,8 +176,8 @@
 ![plugin](http://omooqj50y.bkt.clouddn.com/blog/jenkins/QQ20170313-1.png)-->
 <h3 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h3><p>这里可以选择添加也可以选择直接下一步（右下蓝字按钮）<br><img src="http://omooqj50y.bkt.clouddn.com/blog/jenkins/createUser.png?imageView/2/w/400" alt=""></p>
 <h3 id="安装XCode插件-旧版本"><a href="#安装XCode插件-旧版本" class="headerlink" title="安装XCode插件(旧版本)"></a>安装XCode插件(旧版本)</h3><ul>
-<li><a href="https://wiki.jenkins.io/display/JENKINS/Xcode+Plugin" target="_blank" rel="external">XCode 插件 wiki</a></li>
-<li><a href="https://mvnrepository.com/artifact/org.jenkins-ci.plugins/xcode-plugin/1.4.11" target="_blank" rel="external">XCode 插件 1.4.11版本下载地址</a></li>
+<li><a href="https://wiki.jenkins.io/display/JENKINS/Xcode+Plugin" target="_blank" rel="noopener">XCode 插件 wiki</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.jenkins-ci.plugins/xcode-plugin/1.4.11" target="_blank" rel="noopener">XCode 插件 1.4.11版本下载地址</a></li>
 </ul>
 <ol>
 <li>下载完之后上传到jenkins<ol>
@@ -214,14 +214,14 @@
 <ul>
 <li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-add-shell.png?imageView/2/w/270" alt=""></li>
 <li><p>在Command框中输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fir publish &quot;ipa文件路径&quot; -T &quot;fir token&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fir publish &quot;ipa文件路径&quot; -T &quot;fir token&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
 <p>备注：没有安装fir命令的要先安装fir</p>
-<p>参考：<a href="http://blog.fir.im/fir-im-practicesguide4/" target="_blank" rel="external">使用Jenkins+fir-cli自动发布Android或iOS应用</a></p>
+<p>参考：<a href="http://blog.fir.im/fir-im-practicesguide4/" target="_blank" rel="noopener">使用Jenkins+fir-cli自动发布Android或iOS应用</a></p>
 ]]></content>
     
     <summary type="html">
@@ -247,19 +247,19 @@
     <content type="html"><![CDATA[<p>前阵子有在开发前端，用到了这个<code>jQuery File Upload</code>插件用来上传文件，也遇到了个适配IE8的坑，记录一下。</p>
 <ul>
 <li>Demo<ul>
-<li><a href="https://blueimp.github.io/jQuery-File-Upload/" target="_blank" rel="external">https://blueimp.github.io/jQuery-File-Upload/</a></li>
+<li><a href="https://blueimp.github.io/jQuery-File-Upload/" target="_blank" rel="noopener">https://blueimp.github.io/jQuery-File-Upload/</a></li>
 </ul>
 </li>
 <li>Github<ul>
-<li><a href="https://github.com/blueimp/jQuery-File-Upload" target="_blank" rel="external">https://github.com/blueimp/jQuery-File-Upload</a></li>
+<li><a href="https://github.com/blueimp/jQuery-File-Upload" target="_blank" rel="noopener">https://github.com/blueimp/jQuery-File-Upload</a></li>
 </ul>
 </li>
 </ul>
 <a id="more"></a>
-<h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$(&apos;#proImgsUpload&apos;).fileupload(&#123;</div><div class="line">	url : url,</div><div class="line">	autoUpload : true, // 默认</div><div class="line">	</div><div class="line">	add : function(e, data)&#123; // 打开文件的回调</div><div class="line">		data.submit(); // 文件开始上传的事件</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	progressall : function(e, data)&#123;</div><div class="line">		var progress = parseInt(data.loaded / data.total * 100, 10); // 上传进度</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	done : function(e, data)&#123;</div><div class="line">		// 上传成功</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#proImgsUpload&apos;).fileupload(&#123;</span><br><span class="line">	url : url,</span><br><span class="line">	autoUpload : true, // 默认</span><br><span class="line">	</span><br><span class="line">	add : function(e, data)&#123; // 打开文件的回调</span><br><span class="line">		data.submit(); // 文件开始上传的事件</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	progressall : function(e, data)&#123;</span><br><span class="line">		var progress = parseInt(data.loaded / data.total * 100, 10); // 上传进度</span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	done : function(e, data)&#123;</span><br><span class="line">		// 上传成功</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="适配IE8"><a href="#适配IE8" class="headerlink" title="适配IE8"></a>适配IE8</h3><p>在图片上传成功之后，data.result IE8无法取出服务器返回的数据，而chrome可以。后来网上找了很多方法尝试＝ ＝，才发现IE8里面返回的<code>data.dataType: iframe</code>。而Chrome返回的只有<code>data.data: FormData</code>。</p>
 <ul>
-<li>参考链接<br><a href="http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload" target="_blank" rel="external">http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload</a></li>
+<li>参考链接<br><a href="http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload" target="_blank" rel="noopener">http://missioncriticallabs.com/blog/lessons-learned-from-jquery-file-upload</a></li>
 </ul>
 ]]></content>
     
@@ -268,11 +268,11 @@
       &lt;p&gt;前阵子有在开发前端，用到了这个&lt;code&gt;jQuery File Upload&lt;/code&gt;插件用来上传文件，也遇到了个适配IE8的坑，记录一下。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Demo&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://blueimp.github.io/jQuery-File-Upload/&quot;&gt;https://blueimp.github.io/jQuery-File-Upload/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blueimp.github.io/jQuery-File-Upload/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blueimp.github.io/jQuery-File-Upload/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Github&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/blueimp/jQuery-File-Upload&quot;&gt;https://github.com/blueimp/jQuery-File-Upload&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/blueimp/jQuery-File-Upload&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/blueimp/jQuery-File-Upload&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -323,7 +323,7 @@
     <updated>2017-03-09T02:55:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>从项目中删除了某个目录、文件以后，编译出现警告信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ld: warning: directory not found for option “XXXXXX”</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ld: warning: directory not found for option “XXXXXX”</span><br></pre></td></tr></table></figure>
 <p>消除警告的办法是：</p>
 <ol>
 <li>选择工程, 编译的 (targets)</li>
@@ -335,7 +335,7 @@
     <summary type="html">
     
       &lt;p&gt;从项目中删除了某个目录、文件以后，编译出现警告信息：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ld: warning: directory not found for option “XXXXXX”&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ld: warning: directory not found for option “XXXXXX”&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;消除警告的办法是：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;选择工程, 编译的 (targets)&lt;/li&gt;
@@ -357,14 +357,14 @@
     <published>2017-03-09T02:45:44.000Z</published>
     <updated>2017-03-09T02:46:53.000Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let str = &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;</div><div class="line"></div><div class="line">let newStr = str.replacingOccurrences(of: &quot;&lt;[^&gt;]+&gt;&quot;, with: &quot;&quot;, options: .regularExpression, range: nil)</div><div class="line"></div><div class="line">print(newStr)</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;&lt;p&gt;Hello&lt;/p&gt;&quot;</span><br><span class="line"></span><br><span class="line">let newStr = str.replacingOccurrences(of: &quot;&lt;[^&gt;]+&gt;&quot;, with: &quot;&quot;, options: .regularExpression, range: nil)</span><br><span class="line"></span><br><span class="line">print(newStr)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>就这样。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;let str = &amp;quot;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;let newStr = str.replacingOccurrences(of: &amp;quot;&amp;lt;[^&amp;gt;]+&amp;gt;&amp;quot;, with: &amp;quot;&amp;quot;, options: .regularExpression, range: nil)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(newStr)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let str = &amp;quot;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;let newStr = str.replacingOccurrences(of: &amp;quot;&amp;lt;[^&amp;gt;]+&amp;gt;&amp;quot;, with: &amp;quot;&amp;quot;, options: .regularExpression, range: nil)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(newStr)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -432,6 +432,51 @@
   </entry>
   
   <entry>
+    <title>hexo在不通电脑同步</title>
+    <link href="https://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
+    <id>https://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
+    <published>2016-10-21T03:21:00.000Z</published>
+    <updated>2017-03-09T03:12:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。<br><a id="more"></a></p>
+<p>一、关于搭建的流程</p>
+<ol>
+<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="noopener">http://CrazyMilk.github.io；</a></li>
+<li>创建两个分支：master 与 hexo；</li>
+<li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
+<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
+<li>修改_config.yml中的deploy参数，分支应为master；</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
+<li>执行hexo g -d生成网站并部署到GitHub上。</li>
+</ol>
+<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="noopener">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
+<p>二、关于日常的改动流程<br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
+<ol>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>然后才执行hexo g -d发布网站到master分支上。</li>
+</ol>
+<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
+<p>三、本地资料丢失后的流程<br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<ol>
+<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
+<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+</ol>
+<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HEXO" scheme="https://glchen.cn/tags/HEXO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HEXO👋</title>
     <link href="https://glchen.cn/2016/10/21/%E4%BD%BF%E7%94%A8hexo%E7%A2%B0%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
     <id>https://glchen.cn/2016/10/21/使用hexo碰到的一些问题/</id>
@@ -442,19 +487,19 @@
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
 <li><p>新建文章到<code>source/_posts</code>文件夹</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;文件名&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;文件名&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>新建草稿，新草稿会出现在<code>source/_drafts</code>目录下</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &apos;草稿&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &apos;草稿&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>将草稿移动到<code>source/_posts</code>文件夹</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;草稿&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;草稿&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -464,64 +509,19 @@
 </ul>
 </li>
 </ul>
-<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
 <p>解决方法: </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
 <p>如果还不行，重新装<code>hexo-cli</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>如果还不行，重新装<code>dtrace-provider</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall dtrace-provider</span><br><span class="line">npm install -g dtrace-provider</span><br></pre></td></tr></table></figure>
 <h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;hexo使用起来算是比较方便，在不同机器上使用会碰到一些坑，懒得下次到处翻，做做记录吧。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HEXO" scheme="https://glchen.cn/tags/HEXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo在不通电脑同步</title>
-    <link href="https://glchen.cn/2016/10/21/hexo%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E5%90%8C%E6%AD%A5/"/>
-    <id>https://glchen.cn/2016/10/21/hexo在不同电脑同步/</id>
-    <published>2016-10-21T03:21:00.000Z</published>
-    <updated>2017-03-09T03:12:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。<br><a id="more"></a></p>
-<p>一、关于搭建的流程</p>
-<ol>
-<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="external">http://CrazyMilk.github.io；</a></li>
-<li>创建两个分支：master 与 hexo；</li>
-<li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
-<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
-<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
-<li>修改_config.yml中的deploy参数，分支应为master；</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。</li>
-</ol>
-<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="external">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
-<p>二、关于日常的改动流程<br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<p>三、本地资料丢失后的流程<br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<ol>
-<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
-</ol>
-<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。&lt;br&gt;
     
     </summary>
     
