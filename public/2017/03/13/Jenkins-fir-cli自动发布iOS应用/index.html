@@ -1,15 +1,15 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I"><title> Jenkins+fir-cli自动发布iOS应用 · GLChen</title><meta name="description" content="Jenkins+fir-cli自动发布iOS应用 - GLCHEN"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon2.jpg"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://glchen.cn/atom.xml" title="GLChen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon2.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/tags/" target="_self" class="nav-list-link">TAG</a></li><li class="nav-list-item"><a href="https://github.com/GLChan" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Jenkins+fir-cli自动发布iOS应用</h1><div class="post-info">Mar 13, 2017</div><div class="post-content"><p>最近开发iOS手动打包开始变得频繁，所以集成的自动化也不可避免。在这里记录一下搭建持续集成的服务。</p>
 <a id="more"></a>
 <h1 id="持续集成服务器初级配置-－-Jenkis"><a href="#持续集成服务器初级配置-－-Jenkis" class="headerlink" title="持续集成服务器初级配置 － Jenkis"></a>持续集成服务器初级配置 － Jenkis</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="通过Homebrew安装"><a href="#通过Homebrew安装" class="headerlink" title="通过Homebrew安装"></a>通过Homebrew安装</h4><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install jenkins</span><br></pre></td></tr></table></figure>
 <p>后台进程服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew services start jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew services start jenkins</span><br></pre></td></tr></table></figure>
 <p>如果不想启动后台服务，就只在terminal跑（关闭terminal窗口的同时也会结束进程）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jenkins</div></pre></td></tr></table></figure>
-<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><p>通过<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 或者<a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a> 访问Jenkins的管理后台</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h3><p>通过<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> 或者<a href="http://127.0.0.1:8080/" target="_blank" rel="noopener">http://127.0.0.1:8080/</a> 访问Jenkins的管理后台</p>
 <p>然后会出现<br><img src="http://omooqj50y.bkt.clouddn.com/4233064DE313C1712DFE5B8C624064C8.jpg" alt="Admin Pwd"></p>
 <p>密码就在， copy进来就能登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/mac用户名/.jenkins/secrets/initialAdminPassword</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/mac用户名/.jenkins/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
 <!--### 插件
 之后进入到自定义Jenkins插件安装的界面，共两个选项，可以选择自己想要的，不知道怎么选择的选择左边建议安装(`Install suggested plugins`)的就好。
 
@@ -18,8 +18,8 @@
 ![plugin](http://omooqj50y.bkt.clouddn.com/blog/jenkins/QQ20170313-1.png)-->
 <h3 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h3><p>这里可以选择添加也可以选择直接下一步（右下蓝字按钮）<br><img src="http://omooqj50y.bkt.clouddn.com/blog/jenkins/createUser.png?imageView/2/w/400" alt=""></p>
 <h3 id="安装XCode插件-旧版本"><a href="#安装XCode插件-旧版本" class="headerlink" title="安装XCode插件(旧版本)"></a>安装XCode插件(旧版本)</h3><ul>
-<li><a href="https://wiki.jenkins.io/display/JENKINS/Xcode+Plugin" target="_blank" rel="external">XCode 插件 wiki</a></li>
-<li><a href="https://mvnrepository.com/artifact/org.jenkins-ci.plugins/xcode-plugin/1.4.11" target="_blank" rel="external">XCode 插件 1.4.11版本下载地址</a></li>
+<li><a href="https://wiki.jenkins.io/display/JENKINS/Xcode+Plugin" target="_blank" rel="noopener">XCode 插件 wiki</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.jenkins-ci.plugins/xcode-plugin/1.4.11" target="_blank" rel="noopener">XCode 插件 1.4.11版本下载地址</a></li>
 </ul>
 <ol>
 <li>下载完之后上传到jenkins<ol>
@@ -56,14 +56,14 @@
 <ul>
 <li><img src="http://omooqj50y.bkt.clouddn.com/170712-jenkins-add-shell.png?imageView/2/w/270" alt=""></li>
 <li><p>在Command框中输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fir publish &quot;ipa文件路径&quot; -T &quot;fir token&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fir publish &quot;ipa文件路径&quot; -T &quot;fir token&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
 <p>备注：没有安装fir命令的要先安装fir</p>
-<p>参考：<a href="http://blog.fir.im/fir-im-practicesguide4/" target="_blank" rel="external">使用Jenkins+fir-cli自动发布Android或iOS应用</a></p>
+<p>参考：<a href="http://blog.fir.im/fir-im-practicesguide4/" target="_blank" rel="noopener">使用Jenkins+fir-cli自动发布Android或iOS应用</a></p>
 </div></article></div></section><footer><div class="paginator"><a href="/2017/06/28/Vue问题收录/" class="prev">PREV</a><a href="/2017/03/09/jQuery-File-Upload-插件使用/" class="next">NEXT</a></div><div data-thread-key="2017/03/13/Jenkins-fir-cli自动发布iOS应用/" data-title="Jenkins+fir-cli自动发布iOS应用" data-url="https://glchen.cn/2017/03/13/Jenkins-fir-cli自动发布iOS应用/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
 (function() {
     var ds = document.createElement('script');

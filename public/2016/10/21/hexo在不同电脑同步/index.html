@@ -1,16 +1,16 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="google-site-verification" content="HsubrRs4X8Nkbb-2R68Q06ezr2PDEiT30zhIDaX4O2I"><title> hexo在不通电脑同步 · GLChen</title><meta name="description" content="hexo在不通电脑同步 - GLCHEN"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon2.jpg"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://glchen.cn/atom.xml" title="GLChen"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon2.jpg"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/tags/" target="_self" class="nav-list-link">TAG</a></li><li class="nav-list-item"><a href="https://github.com/GLChan" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">hexo在不通电脑同步</h1><div class="post-info">Oct 21, 2016</div><div class="post-content"><p>HEXO在不通电脑同步, HEXO挺好用的，但是之前没去想要在多部电脑上编辑，所以没有把源文件也给上传，然后遇到电脑系统出问题，现在才开始做更多备份，都是泪。<br><a id="more"></a></p>
 <p>一、关于搭建的流程</p>
 <ol>
-<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="external">http://CrazyMilk.github.io；</a></li>
+<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="noopener">http://CrazyMilk.github.io；</a></li>
 <li>创建两个分支：master 与 hexo；</li>
 <li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
 <li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
-<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
+<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
 <li>修改_config.yml中的deploy参数，分支应为master；</li>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
 <li>执行hexo g -d生成网站并部署到GitHub上。</li>
 </ol>
-<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="external">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
+<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="noopener">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
 <p>二、关于日常的改动流程<br>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
 <ol>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
@@ -20,10 +20,10 @@
 <p>三、本地资料丢失后的流程<br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
 <ol>
 <li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="external">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
 </ol>
-<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="external">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/10/21/使用hexo碰到的一些问题/" class="prev">PREV</a></div><div data-thread-key="2016/10/21/hexo在不同电脑同步/" data-title="hexo在不通电脑同步" data-url="https://glchen.cn/2016/10/21/hexo在不同电脑同步/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
+<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/10/22/关于成长？/" class="prev">PREV</a><a href="/2016/10/21/使用hexo碰到的一些问题/" class="next">NEXT</a></div><div data-thread-key="2016/10/21/hexo在不同电脑同步/" data-title="hexo在不通电脑同步" data-url="https://glchen.cn/2016/10/21/hexo在不同电脑同步/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;

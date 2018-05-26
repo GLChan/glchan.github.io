@@ -2,13 +2,13 @@
 <li><p>VUE是如何加载main.js文件的</p>
 <ul>
 <li><p>如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行<code>npm run dev</code>的时候会出来页面，是因为你根目录下的<code>package.json</code>文件里script配置了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;dev&quot;: &quot;node build/dev-server.js&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;node build/dev-server.js&quot;</span><br></pre></td></tr></table></figure>
 <p>也就是其实执行的是<code>dev-server.js</code>这个文件，里面有定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var webpackConfig = require(&apos;./webpack.dev.conf&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webpackConfig = require(&apos;./webpack.dev.conf&apos;);</span><br></pre></td></tr></table></figure>
 <p>因为我们这个脚手架工具里是用<code>webpack</code>来打包项目文件的，依赖的<code>webpack.dev.conf</code>文件里又定义了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var baseWebpackConfig = require(&apos;./webpack.base.conf&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var baseWebpackConfig = require(&apos;./webpack.base.conf&apos;);</span><br></pre></td></tr></table></figure>
 <p>在这个依赖<code>webpack.base.conf</code>文件里面<code>entry</code>入口文件就配置了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app: &apos;./src/main.js&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app: &apos;./src/main.js&apos;</span><br></pre></td></tr></table></figure>
 <p>所以当你运行<code>npm run dev</code>的时候就从<code>main.js</code>这个入口文件开始执行了</p>
 </li>
 </ul>

@@ -2,19 +2,19 @@
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
 <li><p>新建文章到<code>source/_posts</code>文件夹</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;文件名&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;文件名&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>新建草稿，新草稿会出现在<code>source/_drafts</code>目录下</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &apos;草稿&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &apos;草稿&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>将草稿移动到<code>source/_posts</code>文件夹</p>
 <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &apos;草稿&apos;</div></pre></td></tr></table></figure>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &apos;草稿&apos;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -24,15 +24,15 @@
 </ul>
 </li>
 </ul>
-<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
 <p>解决方法: </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo</div><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
 <p>如果还不行，重新装<code>hexo-cli</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall hexo-cli -g</div><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>如果还不行，重新装<code>dtrace-provider</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install -g dtrace-provider</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall dtrace-provider</span><br><span class="line">npm install -g dtrace-provider</span><br></pre></td></tr></table></figure>
 <h3 id="换了电脑之后hexo-d无效？"><a href="#换了电脑之后hexo-d无效？" class="headerlink" title="换了电脑之后hexo d无效？"></a>换了电脑之后<code>hexo d</code>无效？</h3><p>解决方法: 删除博客目录下的<code>.deploy_git</code>文件夹</p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/10/22/关于成长？/" class="prev">PREV</a><a href="/2016/10/21/hexo在不同电脑同步/" class="next">NEXT</a></div><div data-thread-key="2016/10/21/使用hexo碰到的一些问题/" data-title="HEXO👋" data-url="https://glchen.cn/2016/10/21/使用hexo碰到的一些问题/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
+</div></article></div></section><footer><div class="paginator"><a href="/2016/10/21/hexo在不同电脑同步/" class="prev">PREV</a></div><div data-thread-key="2016/10/21/使用hexo碰到的一些问题/" data-title="HEXO👋" data-url="https://glchen.cn/2016/10/21/使用hexo碰到的一些问题/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"glchen"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
