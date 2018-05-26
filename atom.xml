@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://glchen.cn/"/>
-  <updated>2017-12-25T13:29:48.000Z</updated>
+  <updated>2018-05-26T03:27:46.489Z</updated>
   <id>https://glchen.cn/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sketch将图片转为黑白模式</title>
+    <link href="https://glchen.cn/2018/05/26/sketch%E5%B0%86%E5%9B%BE%E7%89%87%E8%BD%AC%E4%B8%BA%E9%BB%91%E7%99%BD%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://glchen.cn/2018/05/26/sketch将图片转为黑白模式/</id>
+    <published>2018-05-26T03:19:21.000Z</published>
+    <updated>2018-05-26T03:27:46.489Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>图片用sketch打开</li>
+<li><p>选中图片，点击右侧<code>Color Adjust</code>，将<code>Saturation</code>往左拉</p>
+<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/QQ20180526-112143.png" alt=""></li>
+</ul>
+</li>
+<li><p>Success</p>
+<ul>
+<li><img src="http://omooqj50y.bkt.clouddn.com/QQ20180526-112201.png" alt=""></li>
+</ul>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;图片用sketch打开&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;选中图片，点击右侧&lt;code&gt;Color Adjust&lt;/code&gt;，将&lt;code&gt;Saturation&lt;/code&gt;往左拉&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;http://omooqj50y.bkt.
+    
+    </summary>
+    
+    
+      <category term="design" scheme="https://glchen.cn/tags/design/"/>
+    
+  </entry>
   
   <entry>
     <title>npm的一些使用</title>
@@ -62,11 +99,21 @@
     <link href="https://glchen.cn/2017/06/28/Vue%E9%97%AE%E9%A2%98%E6%94%B6%E5%BD%95/"/>
     <id>https://glchen.cn/2017/06/28/Vue问题收录/</id>
     <published>2017-06-28T15:24:05.000Z</published>
-    <updated>2017-12-25T08:21:59.000Z</updated>
+    <updated>2017-12-25T13:36:55.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
-<li>VUE是如何加载main.js文件的<ul>
-<li>如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行npm run dev的时候会出来页面，是因为你根目录下的package.json文件里script配置了”dev”: “node build/dev-server.js”，也就是其实执行的是dev-server.js这个文件，里面有定义var webpackConfig = require(‘./webpack.dev.conf’);因为我们这个脚手架工具里是用webpack来打包项目文件的，依赖的webpack.dev.conf文件里又定义了var baseWebpackConfig = require(‘./webpack.base.conf’);在这个依赖webpack.base.conf文件里面entry入口文件就配置了app: ‘./src/main.js’，所以当你运行npm run dev的时候就从main.js这个入口文件开始执行了</li>
+<li><p>VUE是如何加载main.js文件的</p>
+<ul>
+<li><p>如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行<code>npm run dev</code>的时候会出来页面，是因为你根目录下的<code>package.json</code>文件里script配置了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;dev&quot;: &quot;node build/dev-server.js&quot;</div></pre></td></tr></table></figure>
+<p>也就是其实执行的是<code>dev-server.js</code>这个文件，里面有定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var webpackConfig = require(&apos;./webpack.dev.conf&apos;);</div></pre></td></tr></table></figure>
+<p>因为我们这个脚手架工具里是用<code>webpack</code>来打包项目文件的，依赖的<code>webpack.dev.conf</code>文件里又定义了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var baseWebpackConfig = require(&apos;./webpack.base.conf&apos;);</div></pre></td></tr></table></figure>
+<p>在这个依赖<code>webpack.base.conf</code>文件里面<code>entry</code>入口文件就配置了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app: &apos;./src/main.js&apos;</div></pre></td></tr></table></figure>
+<p>所以当你运行<code>npm run dev</code>的时候就从<code>main.js</code>这个入口文件开始执行了</p>
+</li>
 </ul>
 </li>
 <li>vue Router 路由<ul>
@@ -79,10 +126,10 @@
 <li><code>@</code></li>
 </ul>
 </li>
-<li>npm install<ul>
+<li><code>npm install</code> –<br><code>Node Package Manager</code><ul>
 <li>npm install –save        dependencies :{]</li>
 <li>npm install –save-dev  devDependencies :{}</li>
-<li>package.json</li>
+<li>package.json </li>
 </ul>
 </li>
 </ul>
@@ -91,8 +138,9 @@
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;VUE是如何加载main.js文件的&lt;ul&gt;
-&lt;li&gt;如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行npm run dev的时候会出来页面，是因为你根目录下的package.json文件里script配置了”dev”: “node buil
+&lt;li&gt;&lt;p&gt;VUE是如何加载main.js文件的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果你是用vue.js官网提供的脚手架工具并沿用默认配置的话，你执行&lt;code&gt;npm run dev&lt;/code&gt;的时候会出来页面，是因为你根目录下的&lt;code&gt;package.jso
     
     </summary>
     
